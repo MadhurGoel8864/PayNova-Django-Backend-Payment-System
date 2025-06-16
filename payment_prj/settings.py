@@ -27,7 +27,8 @@ SECRET_KEY = 'os.environ.get("SECRET_KEY")'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["paylio.up.railway.app"]
+ALLOWED_HOSTS = ["*"]
+# ALLOWED_HOSTS = ["paylio.up.railway.app"]
 
 
 # Application definition
@@ -71,6 +72,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'core.context_processor.default',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -173,30 +175,65 @@ JAZZMIN_SETTINGS = {
     # "site_logo": "images/logo.jpg",
     "copyright": "Paylio - All RIght Reserverd © Copyright 2023",
     # "order_with_respect_to": ["core", 'userauths', "transactions" , 'addon', 'blog']
+
+    
 }
 
 
 
-AWS_ACCESS_KEY_ID = "AKIAZK5IZZVYNHEWXOMW"
+# AWS_ACCESS_KEY_ID = "AKIAZK5IZZVYNHEWXOMW"
 
-AWS_SECRET_ACCESS_KEY = "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"
+# AWS_SECRET_ACCESS_KEY = "mkYsYqwbchjDMPRyaaQLzh8zCB+p8hi4d/PqgN3v"
 
-AWS_STORAGE_BUCKET_NAME = "payment-desphixs"
+# AWS_STORAGE_BUCKET_NAME = "payment-desphixs"
 
-AWS_S3_FILE_OVERWRITE = False
+# AWS_S3_FILE_OVERWRITE = False
 
-AWS_DEFAULT_ACL = None
+# AWS_DEFAULT_ACL = None
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+# AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+# AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
-AWS_LOCATION = 'static'
+# AWS_LOCATION = 'static'
 
-STATIC_LOCATION = 'static'
+# STATIC_LOCATION = 'static'
 
-STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
+# STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
+
+
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": True,
+    "brand_small_text": False,
+    "brand_colour": "navbar-indigo",
+    "accent": "accent-olive",
+    "navbar": "navbar-indigo navbar-dark",
+    "no_navbar_border": False,
+    "navbar_fixed": False,
+    "layout_boxed": False,
+    "footer_fixed": False,
+    "sidebar_fixed": False,
+    "sidebar": "sidebar-dark-indigo",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": False,
+    "sidebar_nav_compact_style": False,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": False,
+    "theme": "cyborg",
+    "dark_mode_theme": "cyborg",
+    "button_classes": {
+        "primary": "btn-primary",
+        "secondary": "btn-secondary",
+        "info": "btn-info",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-success"
+    }
+}

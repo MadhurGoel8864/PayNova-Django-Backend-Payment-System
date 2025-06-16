@@ -18,8 +18,8 @@
                             <div class="icon-area">
                                 <img src="{% static 'assets1/images/icon/submitted-icon.png' %}" alt="icon">
                             </div>
-                            <h3>Submitted</h3>
-                            <p>Payment <b>{{transaction.transaction_id}}</b> was sent to <b>{{account.user.kyc.full_name}}</b></p>
+                            <h3>Money Sent</h3>
+                            <p>Payment of <b>${{transaction.amount}}</b> was sent to <b>{{account.user.kyc.full_name}}</b></p>
                             <h5><a href=""><b>View Detail</b></a> | <a href=""><b>Send Another Payment</b></a></h5>
                         </div>
                         <!-- <div class="share-link">

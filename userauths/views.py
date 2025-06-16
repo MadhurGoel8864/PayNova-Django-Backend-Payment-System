@@ -6,6 +6,10 @@ from userauths.models import User
 from userauths.forms import UserRegisterForm
 
 def RegisterView(request):
+    if request.user.is_authenticated:
+        messages.warning(request, f"You are already logged in.")
+        return redirect("account:account")
+    
     if request.method == "POST":
         form = UserRegisterForm(request.POST)
         if form.is_valid():
@@ -19,11 +23,6 @@ def RegisterView(request):
                                     password=form.cleaned_data['password1'])
             login(request, new_user)
             return redirect("account:account")
-    
-    if request.user.is_authenticated:
-        messages.warning(request, f"You are already logged in.")
-        return redirect("account:account")
-
 
     else:
         form = UserRegisterForm()

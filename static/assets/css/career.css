@@ -1,0 +1,228 @@
+/* Career Page Styles */
+.career-section {
+    padding: 120px 0;
+    background-color: var(--section-color);
+}
+
+.career-section .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.career-section .section-header .title {
+    color: var(--head-color);
+    font-size: 43px;
+    line-height: 55.9px;
+    margin-bottom: 20px;
+}
+
+.career-section .section-header p {
+    color: var(--para-color);
+    font-size: 18px;
+    line-height: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.career-content {
+    padding: 20px;
+}
+
+.career-content .title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2d3436;
+}
+
+.career-content .text {
+    font-size: 1.1rem;
+    color: #636e72;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.career-features {
+    margin-top: 40px;
+}
+
+.feature-item {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.feature-item i {
+    font-size: 2rem;
+    color: #0984e3;
+    margin-bottom: 15px;
+}
+
+.feature-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #2d3436;
+}
+
+.feature-item p {
+    color: #636e72;
+    margin: 0;
+}
+
+/* Position Cards */
+.position-card {
+    background: var(--body-color);
+    border: 2px solid #e9ecef;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.position-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.position-card h3 {
+    color: var(--head-color);
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.position-card p {
+    color: var(--para-color);
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 20px;
+}
+
+.position-card .btn-apply {
+    background: var(--primary-color);
+    color: var(--body-color);
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.position-card .btn-apply:hover {
+    background: var(--hover-alt-color);
+    color: var(--body-color);
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 80px 0;
+    background: var(--body-color);
+}
+
+.benefits-section .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.benefits-section .section-header .title {
+    color: var(--head-color);
+    font-size: 43px;
+    line-height: 55.9px;
+    margin-bottom: 20px;
+}
+
+.benefits-section .section-header p {
+    color: var(--para-color);
+    font-size: 18px;
+    line-height: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.benefit-card {
+    background: var(--section-color);
+    border: 2px solid #e9ecef;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border-color: var(--primary-color);
+}
+
+.benefit-card i {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.benefit-card h4 {
+    color: var(--head-color);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.benefit-card p {
+    color: var(--para-color);
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .career-section {
+        padding: 80px 0;
+    }
+    
+    .career-section .section-header .title,
+    .benefits-section .section-header .title {
+        font-size: 36px;
+        line-height: 46px;
+    }
+}
+
+@media (max-width: 767px) {
+    .career-section {
+        padding: 60px 0;
+    }
+    
+    .career-section .section-header .title,
+    .benefits-section .section-header .title {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    
+    .position-card,
+    .benefit-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .career-section .section-header .title,
+    .benefits-section .section-header .title {
+        font-size: 26px;
+        line-height: 36px;
+    }
+    
+    .position-card h3 {
+        font-size: 20px;
+    }
+    
+    .benefit-card h4 {
+        font-size: 18px;
+    }
+} 

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from core.models import CreditCard
+from core.models import CreditCard, Notification
 from account.models import Account
 from decimal import Decimal
 
@@ -39,6 +39,12 @@ def withdraw_fund(request, card_id):
 
             credit_card.amount -= Decimal(amount)
             credit_card.save()
+            
+            Notification.objects.create(
+                user=request.user,
+                amount=amount,
+                notification_type="Withdrew Credit Card Funds"
+            )
 
             messages.success(request, "Withdrawal Successfull")
             return redirect("core:card-detail", credit_card.card_id)
@@ -60,10 +66,18 @@ def delete_card(request, card_id):
         account.account_balance += credit_card.amount
         account.save()
         
+        Notification.objects.create(
+            user=request.user,
+            notification_type="Deleted Credit Card"
+        )
+        
         credit_card.delete()
         messages.success(request, "Card Deleted Successfull")
         return redirect("account:dashboard")
-
+    Notification.objects.create(
+        user=request.user,
+        notification_type="Deleted Credit Card"
+    )
     credit_card.delete()
     messages.success(request, "Card Deleted Successfull")
     return redirect("account:dashboard")
@@ -82,6 +96,12 @@ def fund_credit_card(request, card_id):
             
             credit_card.amount += Decimal(amount)
             credit_card.save()
+            
+            Notification.objects.create(
+                amount=amount,
+                user=request.user,
+                notification_type="Funded Credit Card"
+            )
             
             messages.success(request, "Funding Successfull")
             return redirect("core:card-detail", credit_card.card_id)

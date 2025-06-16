@@ -4,7 +4,7 @@ from account.forms import KYCForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from core.forms import CreditCardForm
-from core.models import CreditCard, Transaction
+from core.models import CreditCard, Notification, Transaction
 
 
 
@@ -85,6 +85,11 @@ def dashboard(request):
                 new_form = form.save(commit=False)
                 new_form.user = request.user 
                 new_form.save()
+                
+                Notification.objects.create(
+                    user=request.user,
+                    notification_type="Added Credit Card"
+                )
                 
                 card_id = new_form.card_id
                 messages.success(request, "Card Added Successfully.")

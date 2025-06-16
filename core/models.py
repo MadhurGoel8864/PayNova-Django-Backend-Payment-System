@@ -36,9 +36,14 @@ CARD_TYPE = (
 NOTIFICATION_TYPE = (
     ("None", "None"),
     ("Transfer", "Transfer"),
-    ("Payment Request", "Payment Request"),
+    ("Credit Alert", "Credit Alert"),
+    ("Debit Alert", "Debit Alert"),
+    ("Sent Payment Request", "Sent Payment Request"),
+    ("Recieved Payment Request", "Recieved Payment Request"),
     ("Funded Credit Card", "Funded Credit Card"),
+    ("Withdrew Credit Card Funds", "Withdrew Credit Card Funds"),
     ("Deleted Credit Card", "Deleted Credit Card"),
+    ("Added Credit Card", "Added Credit Card"),
 
 )
 
@@ -92,6 +97,7 @@ class CreditCard(models.Model):
 class Notification(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     notification_type = models.CharField(max_length=100, choices=NOTIFICATION_TYPE, default="none")
+    amount = models.IntegerField(default=0)
     is_read = models.BooleanField(default=False)
     date = models.DateTimeField(auto_now_add=True)
     nid = ShortUUIDField(length=10, max_length=25, alphabet="abcdefghijklmnopqrstuvxyz")

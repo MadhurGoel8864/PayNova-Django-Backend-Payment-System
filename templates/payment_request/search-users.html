@@ -41,6 +41,10 @@
                                 <a href="{% url 'core:amount-request' a.account_number  %}">Choose</a>
                             </div>
                         </div>
+                        <div class="footer-afrea mt-40">
+                            <a href="">Previous Step</a>
+                            <a href="" class="active">Next</a>
+                        </div>
                         {% empty %}
                         <div>
                             <h4 class="mt-4">Account does not exist</h4>
@@ -48,10 +52,7 @@
                         {% endfor %}
                         {% endif %}
                     </div>
-                    <div class="footer-area mt-40">
-                        <a href="pay.html">Previous Step</a>
-                        <a href="pay-step-2.html" class="active">Next</a>
-                    </div>
+                    
                 </div>
             </div>
         </div>

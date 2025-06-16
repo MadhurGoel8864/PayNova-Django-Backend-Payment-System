@@ -53,7 +53,7 @@ class Account(models.Model):
     
     
     class Meta:
-        ordering = ['-id']
+        ordering = ['-date']
 
     def __str__(self):
         return f"{self.user}"
@@ -86,7 +86,8 @@ class KYC(models.Model):
         return f"{self.user}"    
 
     
-
+    class Meta:
+        ordering = ['-date']
 
 
 
