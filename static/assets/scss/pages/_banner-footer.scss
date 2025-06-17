@@ -53,12 +53,7 @@
                     .nav-link.dropdown-toggle {
                         margin-right: 15px;
                         &::after {
-                            position: absolute;
-                            content: "\0043";
-                            border: none;
-                            font-family: "arafat font";
-                            font-weight: 400;
-                            font-size: 14px;
+                            display: none;
                         }
                     }
                     .dropdown-menu {

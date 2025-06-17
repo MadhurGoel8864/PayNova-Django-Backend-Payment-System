@@ -1,0 +1,27 @@
+{% extends "partials/base.html" %}
+{% block content %}
+{% load static %}
+    <!-- Under Construction Section start -->
+    <section class="banner-section">
+        <div class="overlay">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10">
+                        <div class="text-center ">
+                            <img src="{% static 'assets/images/construction' %}" alt="Under Construction"  style="max-width: 300px;">
+                            <h1 class="title mb-4">Under Construction</h1>
+                            <div class="section-text">
+                                <p class="xlr mb-4">We're working hard to bring you this feature. Please check back later!</p>
+                                <p class="text-muted">This page is currently being developed and will be available soon.</p>
+                            </div>
+                            <div class="mt-4">
+                                <a href="{% url 'core:index' %}" style="margin-bottom: 40px;" class="cmn-btn">Return to Home</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Under Construction Section end -->
+{% endblock %} 

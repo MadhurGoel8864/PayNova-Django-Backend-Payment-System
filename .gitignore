@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Django
+*.log
+*.pot
+*.pyc
+db.sqlite3
+media/
+staticfiles/
+
+# Virtual environment
+venv/
+env/
+venv
+# VSCode/IDE
+.vscode/
+.idea/
+
+# Migrations (optional, depending on team policy)
+**/migrations/*.py
+!**/migrations/__init__.py

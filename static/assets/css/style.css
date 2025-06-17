@@ -700,7 +700,7 @@ label {
     border: none;
     font-family: "arafat font";
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0px;
 }
 
 .header-section .navbar .navbar-collapse .navbar-nav .nav-item .dropdown-menu {

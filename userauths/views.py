@@ -43,7 +43,7 @@ def LoginView(request):
 
             if user is not None: # if there is a user
                 login(request, user)
-                messages.success(request, "You are logged.")
+                messages.success(request, "You are logged in successfully.")
                 return redirect("account:account")
             else:
                 messages.warning(request, "Username or password does not exist")
