@@ -8,6 +8,9 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("about-us/", views.about, name="about"),
     path("career/", views.career, name="career"),
+    path("under-construction/", views.under_construction, name="under-construction"),
+    path("help-center/", views.help_center, name="help-center"),
+    path("faq/", views.faq, name="faq"),
 
     # Transfers
     path("search-account/", transfer.search_users_account_number, name="search-account"),

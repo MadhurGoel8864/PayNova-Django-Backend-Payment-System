@@ -1,0 +1,66 @@
+{% extends "partials/base.html" %}
+{% block content %}
+{% load static %}
+    <!-- Help Center Section start -->
+    <section class="banner-section">
+        <div class="overlay">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10">
+                        <div class="text-center py-5">
+                            <h1 class="title mb-4">Help Center</h1>
+                            <p class="xlr mb-4">Find answers to your questions and get support for your Paylio account</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Categories Section -->
+                <div class="row cus-mar">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-item text-center">
+                            <div class="icon-area">
+                                <img src="{% static 'assets/images/accounts.png' %}" style="width: 70px; height: 70px; margin-bottom: 20px; margin-top: 10px;" alt="icon">
+                            </div>
+                            <h5>Account & Security</h5>
+                            <p>Learn about account management, security features, and how to keep your account safe.</p>
+                            <a href="{% url 'core:faq' %}#account" style="margin-top: 20px;" class="cmn-btn">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-item text-center">
+                            <div class="icon-area">
+                                <img src="{% static 'assets/images/payments.png' %}" style="width: 80px; height: 80px; margin-bottom: 20px;" alt="icon">
+                            </div>
+                            <h5>Payments & Transfers</h5>
+                            <p>Get help with making payments, transfers, and understanding transaction fees.</p>
+                            <a href="{% url 'core:faq' %}#payment" style="margin-top: 20px;" class="cmn-btn">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-item text-center">
+                            <div class="icon-area">
+                                <img src="{% static 'assets/images/wallet.png' %}" style="width: 80px; height: 80px; margin-bottom: 20px;" alt="icon">
+                            </div>
+                            <h5>Cards & Wallets</h5>
+                            <p>Information about managing your cards, wallets, and payment methods.</p>
+                            <a href="{% url 'core:faq' %}#card" style="margin-top: 20px;" class="cmn-btn">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Support Section -->
+                <div class="row justify-content-center mt-5">
+                    <div class="col-lg-8">
+                        <div class="contact-support text-center">
+                            <h3>Still Need Help?</h3>
+                            <p class="mb-4">Our support team is here to help you 24/7</p>
+                            <a href="{% url 'core:under-construction' %}" class="cmn-btn">Contact Support</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Help Center Section end -->
+{% endblock %} 

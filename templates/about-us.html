@@ -1,24 +1,24 @@
 {% extends 'partials/base.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block content %}
 
 <!-- Page Heading -->
 <div class="page-heading" style="padding-top: 100px; display: flex; justify-content: center; align-items: center;">
     <div class="container text-center">
-        <h1 class="display-4">About Us</h1>
+        <h1 class="display-4 title">About Us</h1>
     </div>
 </div>
 
-<!-- About Section -->
+<!-- About Section start -->
 <section class="about-section">
     <div class="container">
         <div class="row align-items-center justify-content-center">
-            <div class="col-lg-6">
+            <div class="col-lg-8">
                 <div class="about-content">
-                    <h2 class="title" style="text-align: center;">Your Trusted Financial Partner</h2>
-                    <p class="text">Welcome to Paylio, your trusted partner in the world of digital finance. We are committed to revolutionizing the way people handle their money, making financial transactions simpler, faster, and more secure.</p>
-                    <p class="text">Our mission is to empower individuals and businesses with innovative financial solutions that drive growth and success in the digital economy.</p>
+                    <p class="text xlr">Welcome to Paylio, your trusted partner in the world of digital finance. We are committed to revolutionizing the way people handle their money, making financial transactions simpler, faster, and more secure.</p>
+                    <p class="text xlr">Our mission is to empower individuals and businesses with innovative financial solutions that drive growth and success in the digital economy.</p>
                     <div class="about-features">
                         <div class="feature-item">
                             <i class="fas fa-shield-alt"></i>
@@ -41,8 +41,9 @@
         </div>
     </div>
 </section>
+<!-- About Section end -->
 
-<!-- Team Section -->
+<!-- Team Section start -->
 <section class="team-section">
     <div class="container">
         <div class="row">
@@ -53,7 +54,7 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center" >
+        <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6">
                 <div class="team-card text-center">
                     <div class="team-image">
@@ -67,87 +68,38 @@
                 </div>
             </div>
         </div>
-        
-        <!-- <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="team-card">
-                    <div class="team-image">
-                        <img src="{% static 'assets/images/my-image.png' %}" alt="Team Member" class="img-fluid">
-                    </div>
-                    <div class="team-content">
-                        <h4 class="name">Madhur Goel</h4>
-                        <p class="position">Developer</p>
-                        <p class="text">Expert in Django and Python.</p>
-                    </div>
-                </div>
-            </div> -->
-            <!-- <div class="col-lg-4 col-md-6">
-                <div class="team-card">
-                    <div class="team-image">
-                        <img src="{% static 'assets/images/team-2.jpg' %}" alt="Team Member" class="img-fluid">
-                    </div>
-                    <div class="team-content">
-                        <h4 class="name">Sarah Johnson</h4>
-                        <p class="position">Chief Technology Officer</p>
-                        <p class="text">Sarah drives our technological innovation and ensures we stay ahead of the curve.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="team-card">
-                    <div class="team-image">
-                        <img src="{% static 'assets/images/team-3.jpg' %}" alt="Team Member" class="img-fluid">
-                    </div>
-                    <div class="team-content">
-                        <h4 class="name">Michael Brown</h4>
-                        <p class="position">Chief Financial Officer</p>
-                        <p class="text">Michael oversees our financial operations and ensures sustainable growth.</p>
-                    </div>
-                </div>
-            </div> -->
-        </div>
     </div>
 </section>
+<!-- Team Section end -->
 
-<!-- Stats Section -->
+<!-- Stats Section start -->
 <section class="stats-section">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="stat-card">
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="stat-card text-center h-100">
                     <div class="stat-icon">
                         <i class="fas fa-users"></i>
                     </div>
                     <div class="stat-content">
-                        <h3 class="counter">1M+</h3>
+                        <h3 class="counter">{{ total_users|intcomma }}</h3>
                         <p>Happy Customers</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <div class="stat-content">
-                        <h3 class="counter">150+</h3>
-                        <p>Countries Served</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="stat-card">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="stat-card text-center h-100">
                     <div class="stat-icon">
                         <i class="fas fa-exchange-alt"></i>
                     </div>
                     <div class="stat-content">
-                        <h3 class="counter">$5B+</h3>
+                        <h3 class="counter">{{ total_transactions|intcomma }}</h3>
                         <p>Transactions Processed</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="stat-card">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="stat-card text-center h-100">
                     <div class="stat-icon">
                         <i class="fas fa-star"></i>
                     </div>
@@ -160,4 +112,6 @@
         </div>
     </div>
 </section>
+<!-- Stats Section end -->
+
 {% endblock content %} 

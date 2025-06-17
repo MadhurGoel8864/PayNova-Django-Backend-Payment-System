@@ -13,10 +13,10 @@
             <div class="banner-content">
                 <div class="container wow fadeInUp">
                     <div class="content-shape">
-                        <img src="{% static 'assets/images/banner-wallet.png' %}" class="obj-1" alt="image">
+                        <img src="{% static 'assets/images/banner-wallet.png' %}" class="obj-1" style="margin-left: 100px;" alt="image">
                     </div>
                     <div class="row justify-content-between align-items-center">
-                        <div class="col-lg-5 col-md-6">
+                        <div class="col-lg-6 col-md-6">
                             <div class="main-content">
                                 <div class="top-area section-text">
                                     <h5 class="sub-title">Trusted by over 3M customers</h5>
@@ -24,79 +24,9 @@
                                     <p class="xlr">Quickly and easily send, receive and request money online with Paylio. Get a customised solution to fit your business needs.</p>
                                 </div>
                                 <div class="bottom-area d-xxl-flex">
-                                    <a href="sign-up.html" class="cmn-btn">Open a Free Account</a>
+                                    <a href="{% url 'userauths:sign-up' %}" class="cmn-btn">Open a Free Account</a>
                                     <a class="cmn-btn active mfp-iframe popupvideo" href="https://www.youtube.com/watch?v=Djz8Nc0Qxwk">See How it Works</a>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-xxl-4 col-xl-5 col-md-6">
-                            <div class="send-money">
-                                <form action="#">
-                                    <div class="currency-area">
-                                        <div class="left-side">
-                                            <span class="mdr">You send</span>
-                                            <h5>1,000</h5>
-                                        </div>
-                                        <div class="right-side">
-                                            <select>
-                                                <option value="1">USD</option>
-                                                <option value="2">GBP</option>
-                                                <option value="3">AUS</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="calculation">
-                                        <div class="head-area">
-                                            <img src="{% static 'assets/images/icon/conversion.png' %}" alt="image">
-                                            <span class="mdr highlight">Show calculation</span>
-                                        </div>
-                                        <div class="calculation-details">
-                                            <div class="single-area d-flex align-items-center">
-                                                <div class="left-area">
-                                                    <i class="fas fa-minus"></i>
-                                                    <span class="mdr">10.04 USD</span>
-                                                </div>
-                                                <div class="right-area">
-                                                    <span class="mdr">Our fee</span>
-                                                </div>
-                                            </div>
-                                            <div class="single-area d-flex align-items-center">
-                                                <div class="left-area">
-                                                    <i class="fas fa-equals"></i>
-                                                    <span class="mdr">989.96 USD</span>
-                                                </div>
-                                                <div class="right-area">
-                                                    <span class="mdr">We’ll Convert</span>
-                                                </div>
-                                            </div>
-                                            <div class="single-area d-flex align-items-center">
-                                                <div class="left-area">
-                                                    <i class="fas fa-times"></i>
-                                                    <span class="mdr">1.3947</span>
-                                                </div>
-                                                <div class="right-area">
-                                                    <span class="mdr highlight">Paylio Rate</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="currency-area">
-                                        <div class="left-side">
-                                            <span class="mdr">Recipient gets</span>
-                                            <h5>1,380.69</h5>
-                                        </div>
-                                        <div class="right-side recipient">
-                                            <select>
-                                                <option value="1">AUS</option>
-                                                <option value="2">USD</option>
-                                                <option value="3">GBP</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="btn-area mt-40">
-                                        <a href="javascript:void(0)" class="cmn-btn w-100">Get Started</a>
-                                    </div>
-                                </form>
                             </div>
                         </div>
                     </div>
@@ -217,30 +147,30 @@
                 <div class="row cus-mar">
                     <div class="col-xl-3 col-6">
                         <div class="single-item">
-                            <img src="{% static 'assets/images/icon/our-solutions-icon-1.png' %}" alt="icon">
-                            <h5>Payments</h5>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <img src="{% static 'assets/images/icon/our-solutions-icon-1.png' %}" style="margin-top: -12px;"  alt="icon">
+                            <h5> Payments</h5>
+                            <p>Easily send and receive payments from anywhere in the world with our platform.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-6">
                         <div class="single-item">
-                            <img src="{% static 'assets/images/icon/our-solutions-icon-2.png' %}" alt="icon">
-                            <h5>Collections</h5>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <img src="{% static 'assets/images/transaction_history.png' %}" alt="icon">
+                            <h5>Transaction History</h5>
+                            <p>Keep track of all your transactions with detailed history and real-time updates.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-6">
                         <div class="single-item">
-                            <img src="{% static 'assets/images/icon/our-solutions-icon-3.png' %}" alt="icon">
-                            <h5>Conversions</h5>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <img src="{% static 'assets/images/kyc.png' %}" style="width: 110px; height: 110px; margin-top: -10px;"  alt="icon">
+                            <h5>KYC Verification</h5>
+                            <p>Complete your identity verification process securely to access all features.</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-6">
                         <div class="single-item">
                             <img src="{% static 'assets/images/icon/our-solutions-icon-4.png' %}" alt="icon">
-                            <h5>Global Account</h5>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <h5>Credit Cards</h5>
+                            <p>Manage your credit cards, track spending with our secure credit card services.</p>
                         </div>
                     </div>
                 </div>
@@ -314,9 +244,7 @@
                             <p>Access your account via your mobile phone. View balance, transfer funds, view transactions wherever you are.</p>
                         </div>
                         <ul class="features">
-                            <li>
-                                <img src="{% static 'assets/images/icon/check.png' %}" alt="icon"> Login with fingerprint or Face ID.
-                            </li>
+
                             <li>
                                 <img src="{% static 'assets/images/icon/check.png' %}" alt="icon"> Simple few Taps to send money
                             </li>
@@ -327,14 +255,14 @@
                                 <img src="{% static 'assets/images/icon/check.png' %}" alt="icon"> Get instant App notifications.
                             </li>
                         </ul>
-                        <div class="brand-area mt-40">
+                        <!-- <div class="brand-area mt-40">
                             <a href="javascript:void(0)">
                                 <img src="{% static 'assets/images/GooglePlay-btn.png' %}" alt="icon">
                             </a>
                             <a href="javascript:void(0)">
                                 <img src="{% static 'assets/images/apple-btn.png' %}" alt="icon">
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -351,7 +279,7 @@
                         <div class="section-header text-center">
                             <h5 class="sub-title">Testimonials</h5>
                             <h2 class="title">What Our Customers Say</h2>
-                            <p>245m+ happy clients all around the world. Don’t just take our word for it</p>
+                            <p>245m+ happy clients all around the world. Don't just take our word for it</p>
                         </div>
                     </div>
                 </div>
@@ -471,60 +399,60 @@
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingLeftOne">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLeftOne" aria-expanded="false" aria-controls="collapseLeftOne">
-                                        How to send money online?
+                                        How to manage credit cards online?
                                     </button>
                                 </h6>
                                 <div id="collapseLeftOne" class="accordion-collapse collapse" aria-labelledby="headingLeftOne" data-bs-parent="#accordionLeft">
                                     <div class="accordion-body">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                        <p>You can easily manage your credit cards through our secure online platform. Add new cards, view transaction history, set spending limits, and monitor your credit score all in one place.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingLeftTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLeftTwo" aria-expanded="false" aria-controls="collapseLeftTwo">
-                                        How much are money transfer fees?
+                                        What are the credit card fees?
                                     </button>
                                 </h6>
                                 <div id="collapseLeftTwo" class="accordion-collapse collapse" aria-labelledby="headingLeftTwo" data-bs-parent="#accordionLeft">
                                     <div class="accordion-body">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                        <p>Our credit card fees are transparent and competitive. We charge minimal annual fees, with no hidden charges. International transactions may have a small currency conversion fee. Check our pricing page for detailed fee structure.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingLeftThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLeftThree" aria-expanded="false" aria-controls="collapseLeftThree">
-                                        What is the fastest way to send money abroad?
+                                        How secure is my credit card information?
                                     </button>
                                 </h6>
                                 <div id="collapseLeftThree" class="accordion-collapse collapse" aria-labelledby="headingLeftThree" data-bs-parent="#accordionLeft">
                                     <div class="accordion-body">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                        <p>We use industry-leading encryption and security measures to protect your credit card information. Our platform is PCI DSS compliant, and we offer additional security features like real-time fraud monitoring and instant transaction alerts.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingLeftFour">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLeftFour" aria-expanded="false" aria-controls="collapseLeftFour">
-                                        How to use Paylio?
+                                        How to track credit card expenses?
                                     </button>
                                 </h6>
                                 <div id="collapseLeftFour" class="accordion-collapse collapse" aria-labelledby="headingLeftFour" data-bs-parent="#accordionLeft">
                                     <div class="accordion-body">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                        <p>Our platform provides detailed expense tracking features. You can categorize transactions, set budgets, generate spending reports, and receive monthly statements. All transactions are updated in real-time for accurate tracking.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingLeftFive">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLeftFive" aria-expanded="false" aria-controls="collapseLeftFive">
-                                        How does Paylio protect your money?
+                                        What credit card features are available?
                                     </button>
                                 </h6>
                                 <div id="collapseLeftFive" class="accordion-collapse collapse" aria-labelledby="headingLeftFive" data-bs-parent="#accordionLeft">
                                     <div class="accordion-body">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                        <p>Our credit cards come with features like cashback rewards, travel insurance, purchase protection, and emergency card replacement. You can also set up automatic payments, customize spending limits, and receive instant notifications for all transactions.</p>
                                     </div>
                                 </div>
                             </div>
@@ -535,60 +463,60 @@
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingRightOne">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRightOne" aria-expanded="false" aria-controls="collapseRightOne">
-                                        Are money transfer apps safe?
+                                        How to apply for a credit card?
                                     </button>
                                 </h6>
                                 <div id="collapseRightOne" class="accordion-collapse collapse" aria-labelledby="headingRightOne" data-bs-parent="#accordionRight">
                                     <div class="accordion-body">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                        <p>Applying for a credit card is simple. Log in to your account, fill out the application form, provide required documents, and submit. Our team will review your application and get back to you within 2-3 business days.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingRightTwo">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRightTwo" aria-expanded="false" aria-controls="collapseRightTwo">
-                                        How much money can I send?
+                                        What is the credit limit?
                                     </button>
                                 </h6>
                                 <div id="collapseRightTwo" class="accordion-collapse collapse" aria-labelledby="headingRightTwo" data-bs-parent="#accordionRight">
                                     <div class="accordion-body">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                        <p>Credit limits are determined based on your credit score, income, and financial history. You can request a credit limit increase after maintaining a good payment history for at least 6 months.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingRightThree">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRightThree" aria-expanded="false" aria-controls="collapseRightThree">
-                                        Which currency can I send?
+                                        How to dispute a credit card charge?
                                     </button>
                                 </h6>
                                 <div id="collapseRightThree" class="accordion-collapse collapse" aria-labelledby="headingRightThree" data-bs-parent="#accordionRight">
                                     <div class="accordion-body">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                        <p>To dispute a charge, log in to your account, find the transaction in your statement, click on 'Dispute Transaction', and follow the prompts. Our support team will investigate and resolve the dispute within 30 days.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingRightFour">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRightFour" aria-expanded="false" aria-controls="collapseRightFour">
-                                        Cancel transaction
+                                        How to cancel a credit card?
                                     </button>
                                 </h6>
                                 <div id="collapseRightFour" class="accordion-collapse collapse" aria-labelledby="headingRightFour" data-bs-parent="#accordionRight">
                                     <div class="accordion-body">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                        <p>To cancel your credit card, contact our customer service or visit your nearest branch. Ensure all pending payments are cleared before cancellation. The process typically takes 5-7 business days to complete.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <h6 class="accordion-header" id="headingRightFive">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRightFive" aria-expanded="false" aria-controls="collapseRightFive">
-                                        Can I send multiple payments?
+                                        Can I have multiple credit cards?
                                     </button>
                                 </h6>
                                 <div id="collapseRightFive" class="accordion-collapse collapse" aria-labelledby="headingRightFive" data-bs-parent="#accordionRight">
                                     <div class="accordion-body">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit posuere vel venenatis, eu sit massa. Volutpat massa rhoncus odio feugiat tellus elit massa sed ullamcorper a in.</p>
+                                        <p>Yes, you can have multiple credit cards with us. Each card can be used for different purposes, and you can manage all cards from a single dashboard. Additional cards may require separate applications and approval.</p>
                                     </div>
                                 </div>
                             </div>
