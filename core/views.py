@@ -36,4 +36,7 @@ def about(request):
 def career(request):
     return render(request, 'career.html')
 
+def features(request):
+    return render(request, 'features.html')
+
 

@@ -1,0 +1,77 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="features-section">
+    <div class="overlay pt-120 pb-120">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <div class="section-header">
+                        <h2 class="title">Our Features</h2>
+                        <p>Discover the powerful features that make Paylio the perfect choice for your financial needs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row cus-mar" style="margin-bottom: 30px;">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-item text-center" style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 10px; transition: all 0.3s ease;">
+                        <div class="icon">
+                            <img src="{% static 'assets/images/icon/our-solutions-icon-3.png' %}" alt="icon" style="width: 64px; height: 64px; margin-top: 20px; margin-bottom: 20px;">
+                        </div>
+                        <h4>Money Transfer</h4>
+                        <p>Send money securely to anyone, anywhere in the world with our fast transfer service.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-item text-center" style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 10px; transition: all 0.3s ease; ">
+                        <div class="icon">
+                            <img src="{% static 'assets/images/personal-icon-4.png' %}" alt="icon" style="width: 64px; height: 64px; margin-top: 20px; margin-bottom: 20px">
+                        </div>
+                        <h4>Credit Card</h4>
+                        <p>Manage your credit cards and make secure payments with card management system.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-item text-center" style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 10px; transition: all 0.3s ease;">
+                        <div class="icon">
+                            <img src="{% static 'assets/images/icon/how-works-icon-1.png' %}" alt="icon" style="width: 64px; height: 64px; margin-top: 20px; margin-bottom: 20px">
+                        </div>
+                        <h4>Transaction History</h4>
+                        <p>Keep track of all your transactions with detailed history and real-time updates.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row cus-mar">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-item text-center" style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 10px; transition: all 0.3s ease;">
+                        <div class="icon">
+                            <img src="{% static 'assets/images/security-shape-1.png' %}" alt="icon" style="width: 64px; height: 64px; margin-top: 20px; margin-bottom: 20px">
+                        </div>
+                        <h4>Secure Payments</h4>
+                        <p>Your security is our priority. All transactions are encrypted and protected.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-item text-center" style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 10px; transition: all 0.3s ease;">
+                        <div class="icon">
+                            <img src="{% static 'assets/images/personal-icon-3.png' %}" alt="icon" style="width: 64px; height: 64px; margin-top: 20px; margin-bottom: 20px">
+                        </div>
+                        <h4>Payment Requests</h4>
+                        <p>Send and receive payment requests easily with our intuitive request system.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-item text-center" style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 10px; transition: all 0.3s ease;">
+                        <div class="icon">
+                            <img src="{% static 'assets/images/personal-icon-6.png' %}" alt="icon" style="width: 64px; height: 64px; margin-top: 20px; margin-bottom: 20px">
+                        </div>
+                        <h4>Account Management</h4>
+                        <p>Manage your account settings, profile, and preferences all in one place.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %} 
