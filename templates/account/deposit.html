@@ -1,0 +1,49 @@
+{% extends "partials/dashboard-base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<!-- Deposit Section start -->
+<section class="dashboard-section body-collapse">
+    <div class="overlay pt-120">
+        <div class="container-fruid">
+            {% if form.errors %}
+                <div class="alert alert-danger">
+                    <strong>{{form.errors}}</strong>
+                </div>
+            {% endif %}
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-content">
+                        <div class="deposit-area">
+                            <div class="section-text">
+                                <h4>Deposit Money</h4>
+                                <p>Add money to your account balance</p>
+                                <div class="view-all d-flex align-items-center">
+                                    <a href="{% url 'core:deposit-history' %}">View Deposit History</a>
+                                    <img src="{% static 'assets1/images/icon/right-arrow.png' %}" alt="icon">
+                                </div>
+                            </div>
+                            <form method="POST">
+                                {% csrf_token %}
+                                <div class="single-input">
+                                    <label for="amount">Amount (₹)</label>
+                                    {{form.amount}}
+                                </div>
+                                <div class="single-input mt-30">
+                                    <label for="description">Description (Optional)</label>
+                                    {{form.description}}
+                                </div>
+                                <div class="btn-border w-100 mt-40">
+                                    <button type="submit" class="cmn-btn w-100">Deposit Money</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Deposit Section end -->
+{% endblock content %} 

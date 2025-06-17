@@ -3,6 +3,10 @@ from django.http import HttpResponse
 from django.db.models import Count
 from .models import Transaction
 from userauths.models import User
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from .forms import DepositForm
+from .models import Account, Notification
 
 def index(request):
     if request.user.is_authenticated:
@@ -38,5 +42,77 @@ def career(request):
 
 def features(request):
     return render(request, 'features.html')
+
+@login_required
+def deposit_money(request):
+    if request.method == 'POST':
+        form = DepositForm(request.POST)
+        if form.is_valid():
+            amount = form.cleaned_data['amount']
+            description = form.cleaned_data['description'] or 'Deposit'
+            
+            # Get user's account
+            account = Account.objects.get(user=request.user)
+            
+            # Update account balance
+            account.account_balance += amount
+            account.save()
+            
+            # Create transaction record
+            Transaction.objects.create(
+                user=request.user,
+                amount=amount,
+                description=description,
+                transaction_type='deposit',
+                status='completed',
+                sender=request.user,
+                reciever=request.user
+            )
+            
+            # Create notification
+            Notification.objects.create(
+                user=request.user,
+                amount=amount,
+                notification_type='Credit Alert'
+            )
+            
+            messages.success(request, f'Successfully deposited ₹{amount} to your account.')
+            return redirect('account:dashboard')
+    else:
+        form = DepositForm()
+    
+    context = {
+        'form': form
+    }
+    return render(request, 'account/deposit.html', context)
+
+@login_required
+def deposit_history(request):
+    deposits = Transaction.objects.filter(
+        user=request.user,
+        transaction_type='deposit'
+    ).order_by('-date')
+    
+    context = {
+        'deposits': deposits
+    }
+    return render(request, 'account/deposit-history.html', context)
+
+@login_required
+def transactions(request):
+    sender_transaction = Transaction.objects.filter(sender=request.user, transaction_type="transfer").order_by("-id")
+    reciever_transaction = Transaction.objects.filter(reciever=request.user, transaction_type="transfer").order_by("-id")
+    request_sender_transaction = Transaction.objects.filter(sender=request.user, transaction_type="request")
+    request_reciever_transaction = Transaction.objects.filter(reciever=request.user, transaction_type="request")
+    deposits = Transaction.objects.filter(user=request.user, transaction_type="deposit").order_by("-id")
+
+    context = {
+        "sender_transaction":sender_transaction,
+        "reciever_transaction":reciever_transaction,
+        "request_sender_transaction":request_sender_transaction,
+        "request_reciever_transaction":request_reciever_transaction,
+        "deposits":deposits,
+    }
+    return render(request, "transaction/transaction-list.html", context)
 
 

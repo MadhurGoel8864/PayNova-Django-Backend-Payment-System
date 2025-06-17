@@ -48,4 +48,7 @@ urlpatterns = [
     path("fund-credit-card/<card_id>/", credit_card.fund_credit_card, name="fund-credit-card"),
     path("withdraw_fund/<card_id>/", credit_card.withdraw_fund, name="withdraw_fund"),
     path("delete_card/<card_id>/", credit_card.delete_card, name="delete_card"),
+
+    path('deposit-money/', views.deposit_money, name='deposit-money'),
+    path('deposit-history/', views.deposit_history, name='deposit-history'),
 ]

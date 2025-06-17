@@ -13,8 +13,25 @@ class CreditCardForm(forms.ModelForm):
         fields = ['name', 'number', 'month', 'year', 'cvv', 'card_type']
 
 class AmountForm(forms.ModelForm):
-    amount = forms.IntegerField(widget=forms.NumberInput(attrs={"placeholder":"$30"}))
+    amount = forms.IntegerField(widget=forms.NumberInput(attrs={"placeholder":"₹30"}))
     
     class Meta:
         model = CreditCard
         fields = ['amount']
+
+class DepositForm(forms.Form):
+    amount = forms.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        widget=forms.NumberInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Enter amount to deposit'
+        })
+    )
+    description = forms.CharField(
+        required=False,
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Enter description (optional)'
+        })
+    )
