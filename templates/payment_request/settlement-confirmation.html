@@ -10,7 +10,7 @@
                     <div class="head-area d-flex align-items-center justify-content-between">
                         <h4>Make a Payment</h4>
                         <div class="icon-area">
-                            <img src="{% static 'assets/images/icon/support-icon.png' %}" alt="icon">
+                            <img src="{% static 'assets/images/icon/support.png' %}" alt="icon">
                         </div>
                     </div>
                     <div class="choose-recipient">
@@ -35,7 +35,7 @@
                                 <div class="right">
                                     
                                     <a href="{% url 'core:search-account' %}">
-                                        <i class="icon-h-edit"></i>
+                                        <i class="fas fa-edit"></i>
                                         Edit
                                     </a>
                                 </div>
@@ -47,7 +47,7 @@
                             <h6>Payment Details</h6>
                             <div class="right">
                                 <a href="javascript:void(0)">
-                                    <i class="icon-h-edit"></i>
+                                    <i class="fas fa-edit"></i>
                                     Edit
                                 </a>
                             </div>
@@ -57,11 +57,11 @@
                                 <ul class="details-list">
                                     <li>
                                         <span>You Send</span>
-                                        <b>{{transaction.amount}} USD</b>
+                                        <b>{{transaction.amount}} INR</b>
                                     </li>
                                     <li>
                                         <span>Recipient gets</span>
-                                        <b>{{transaction.amount}} USD</b>
+                                        <b>{{transaction.amount}} INR</b>
                                     </li>
                                     <li>
                                         <span>E-mail of receiver</span>

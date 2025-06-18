@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from account.models import KYC, Account
-from account.forms import KYCForm
+from account.forms import KYCForm, EditKYCForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from core.forms import CreditCardForm
@@ -29,6 +29,51 @@ def account(request):
     return render(request, "account/account.html", context)
 
 @login_required
+def edit_kyc(request):
+    user = request.user
+    account = Account.objects.get(user=user)
+    
+    try:
+        kyc = KYC.objects.get(user=user)
+    except:
+        messages.warning(request, "You need to submit your kyc first")
+        return redirect("account:kyc-reg")
+    
+    # Check if edit mode is requested
+    edit_mode = request.GET.get('edit', 'false').lower() == 'true'
+    
+    if request.method == "POST":
+        form = EditKYCForm(request.POST, request.FILES, instance=kyc)
+        if form.is_valid():
+            new_form = form.save(commit=False)
+            new_form.user = user
+            new_form.account = account
+            new_form.save()
+            messages.success(request, "KYC information updated successfully.")
+            return redirect("account:account")
+        else:
+            # Form is invalid, we'll render the template with the form containing errors
+            context = {
+                "account": account,
+                "form": form,
+                "kyc": kyc,
+                "edit_mode": True,
+            }
+            return render(request, "account/edit-kyc.html", context)
+    else:
+        form = EditKYCForm(instance=kyc)
+        if edit_mode:
+            form.enable_all_fields()
+    
+    context = {
+        "account": account,
+        "form": form,
+        "kyc": kyc,
+        "edit_mode": edit_mode,
+    }
+    return render(request, "account/edit-kyc.html", context)
+
+@login_required
 def kyc_registration(request):
     user = request.user
     account = Account.objects.get(user=user)
@@ -47,8 +92,17 @@ def kyc_registration(request):
             new_form.save()
             messages.success(request, "KYC Form submitted successfully, In review now.")
             return redirect("account:account")
+        else:
+            # Form is invalid, we'll render the template with the form containing errors
+            context = {
+                "account": account,
+                "form": form,
+                "kyc": kyc,
+            }
+            return render(request, "account/kyc-form.html", context)
     else:
         form = KYCForm(instance=kyc)
+    
     context = {
         "account": account,
         "form": form,

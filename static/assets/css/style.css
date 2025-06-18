@@ -1,11 +1,11 @@
 /*============================================ 
-# Template Name: Paylio 
+# Template Name: Paynova 
 # Version: 1.0
 # Date: 26/04/2022
 # Author: pixelaxis
 # Author URI: https://themeforest.net/user/pixelaxis/portfolio
 # Developed By: Pranto
-# Description: Paylio - Money Transfer and Online Payments HTML Template
+# Description: Paynova - Money Transfer and Online Payments HTML Template
 ============================================*/
 
 /*============================================ 
@@ -3859,10 +3859,10 @@ label {
         }
 
         .logo {
-        margin-top: 5px;
+        /* margin-top: 5px; */
         position: relative;
-        width: 140px;
-        height: 30px;
+        width: 200px;
+        height: 50px;
         /* object-fit: fill; */
         }
         .logo span {

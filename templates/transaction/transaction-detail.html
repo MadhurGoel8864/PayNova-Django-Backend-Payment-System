@@ -31,7 +31,7 @@
                                                                     <div class="text-area">
                                                                         <!-- <h6>Sender: {{transaction.sender.kyc.full_name|title}}</h6>
                                                                         <h6 class="mt-2">Reciever: {{transaction.reciever.kyc.full_name|title}}</h6> -->
-                                                                        <h5><b>{{transaction.amount|intcomma}} USD</b></h5>
+                                                                        <h5><b>{{transaction.amount|intcomma}} INR</b></h5>
                                                                         <p>{{transaction.date}}</p>
                                                                         <!-- <p class="text-warning com ">{{transaction.status|title}}</p> -->
                                                                         {% if transaction.status == 'completed' %}
@@ -54,15 +54,15 @@
                                                                         <ul class="payment-details">
                                                                             <li>
                                                                                 <span>Payment Amount</span>
-                                                                                <span>{{transaction.amount|intcomma}} USD</span>
+                                                                                <span>{{transaction.amount|intcomma}} INR</span>
                                                                             </li>
                                                                             <li>
                                                                                 <span>Fee</span>
-                                                                                <span>Free USD</span>
+                                                                                <span>Free INR</span>
                                                                             </li>
                                                                             <li>
                                                                                 <span>Total Amount</span>
-                                                                                <span>{{transaction.amount|intcomma}} USD</span>
+                                                                                <span>{{transaction.amount|intcomma}} INR</span>
                                                                             </li>
                                                                         </ul>
                                                                         <ul class="payment-info">

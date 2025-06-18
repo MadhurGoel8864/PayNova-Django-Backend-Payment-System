@@ -2,6 +2,29 @@
 {% load static %}
 {% block content %}
     <!-- Dashboard Section start -->
+    <style>
+        /* Styling for read-only fields */
+        input[readonly] {
+            background-color: #f8f9fa !important;
+            color: #6c757d !important;
+            cursor: not-allowed;
+            border: 1px solid #dee2e6;
+        }
+        
+        /* Info alert styling */
+        .info-alert {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            color: #0c5460;
+        }
+        
+        .info-alert strong {
+            color: #0c5460;
+        }
+    </style>
 <section class="dashboard-section body-collapse account">
     <div class="overlay pt-120">
         <div class="container-fruid">
@@ -88,6 +111,9 @@
                             <div class="tab-content mt-40">
                                 <div class="tab-pane fade show active" id="account" role="tabpanel"
                                     aria-labelledby="account-tab">
+                                    
+                                    <!-- Information Alert -->
+                                    
                                     <div class="upload-avatar">
                                         <div class="avatar-left d-flex align-items-center">
                                             <div class="profile-img">
@@ -121,55 +147,55 @@
                                             <div class="col-md-6">
                                                 <div class="single-input">
                                                     <label for="lName">Email</label>
-                                                    <input type="text" id="lName" placeholder="Davis" value="{{ kyc.user.email }}">
+                                                    <input type="text" id="lName" readonly placeholder="Davis" value="{{ kyc.user.email }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="single-input">
                                                     <label for="lName">Gender</label>
-                                                    <input type="text" id="lName" placeholder="Davis" value="{{ kyc.gender|title }}">
+                                                    <input type="text" id="lName" readonly placeholder="Davis" value="{{ kyc.gender|title }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="single-input">
                                                     <label for="lName">Marrital</label>
-                                                    <input type="text" id="lName" placeholder="Davis" value="{{ kyc.marrital_status|title }}">
+                                                    <input type="text" id="lName" readonly placeholder="Davis" value="{{ kyc.marrital_status|title }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
                                                     <label for="lName">Date of Birth</label>
-                                                    <input type="text" id="lName" placeholder="Davis" value="{{ kyc.date_of_birth|date:'d M, Y' }}">
+                                                    <input type="text" id="lName" readonly placeholder="Davis" value="{{ kyc.date_of_birth|date:'d M, Y' }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
                                                     <label for="lName">Mobile</label>
-                                                    <input type="text" id="lName" placeholder="Davis" value="{{ kyc.mobile }}">
+                                                    <input type="text" id="lName" readonly placeholder="Davis" value="{{ kyc.mobile }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
                                                     <label for="lName">Identity Type</label>
-                                                    <input type="text" id="lName" placeholder="Davis" value="{{ kyc.identity_type|title }}">
+                                                    <input type="text" id="lName" readonly placeholder="Davis" value="{{ kyc.identity_type|title }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
                                                     <label for="lName">Country</label>
-                                                    <input type="text" id="lName" placeholder="Davis" value="{{ kyc.country|title }}">
+                                                    <input type="text" id="lName" readonly placeholder="Davis" value="{{ kyc.country|title }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
                                                     <label for="lName">State</label>
-                                                    <input type="text" id="lName" placeholder="Davis" value="{{ kyc.state|title }}">
+                                                    <input type="text" id="lName" readonly placeholder="Davis" value="{{ kyc.state|title }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="single-input">
                                                     <label for="lName">City</label>
-                                                    <input type="text" id="lName" placeholder="Davis" value="{{ kyc.city|title }}">
+                                                    <input type="text" id="lName" readonly placeholder="Davis" value="{{ kyc.city|title }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 ">
@@ -191,7 +217,7 @@
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="btn-border">
-                                                    <button class="cmn-btn">Edit KYC</button>
+                                                    <a href="{% url 'account:edit-kyc' %}?edit=true" class="cmn-btn">Edit KYC</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -337,7 +363,7 @@
                                             </div>
                                             <div class="single-card">
                                                 <button type="button" class="reg w-100" data-bs-toggle="modal" data-bs-target="#transactionsMod">
-                                                    <img src="{% static 'assets1/images/paylio-card.png' %}" alt="image" class="w-100">
+                                                    <img src="{% static 'assets1/images/Paynova-card.png' %}" alt="image" class="w-100">
                                                 </button>
                                             </div>
                                             <div class="single-card">
@@ -495,7 +521,7 @@
                                                     <span>5880 **** **** 8854</span>
                                                 </div>
                                                 <a href="javascript:void(0)">
-                                                    <i class="icon-h-edit"></i>
+                                                    <i class="fas fa-edit"></i>
                                                     Edit
                                                 </a>
                                             </div>

@@ -390,7 +390,7 @@
                                     <div class="right-side">
                                         <div class="dropdown-area">
                                             <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <img src="{% static 'assets1/images/icon/option.png' %}" alt="icon">
+                                                <!-- <img src="{% static 'assets1/images/icon/option.png' %}" alt="icon"> -->
                                             </button>
                                             
                                         </div>
@@ -478,10 +478,7 @@
                             <div class="single-item">
                                 <div class="section-text d-flex align-items-center justify-content-between">
                                     <h6>Notification ({{notifications.count}})</h6>
-                                    <div class="view-all d-flex align-items-center">
-                                        <a href="javascript:void(0)">View All</a>
-                                        <img src="{% static 'assets1/images/icon/right-arrow.png' %}" alt="icon">
-                                    </div>
+
                                 </div>
                                 <ul class="recipients-item">
                                     {% for n in notifications %}
@@ -548,7 +545,7 @@
                                             <img src="{% static 'assets1/images/visa-card-2.png' %}" alt="image">
                                         </div>
                                         <div class="text-area">
-                                            <h5>Paylio payment Card </h5>
+                                            <h5>Paynova payment Card </h5>
                                             <p>Linked: 01 Jun 2021</p>
                                         </div>
                                     </div>
@@ -622,16 +619,14 @@
                                         <div class="tab-pane fade" id="cancel" role="tabpanel" aria-labelledby="cancel-tab">
                                             <div class="main-area">
                                                 <div class="transfer-area">
-                                                    <p>Set a transfer limit for paylio payment Card</p>
+                                                    <p>Set a transfer limit for Paynova payment Card</p>
                                                     <p class="mdr">Transfer Limit</p>
                                                 </div>
                                                 <form action="#">
                                                     <div class="input-area">
                                                         <input class="xxlr" placeholder="400.00" type="number">
                                                         <select>
-                                                            <option value="1">USD</option>
-                                                            <option value="2">USD</option>
-                                                            <option value="3">USD</option>
+                                                            <option value="1">INR</option>
                                                         </select>
                                                     </div>
                                                     <div class="bottom-area d-flex align-items-center justify-content-between">
@@ -748,7 +743,7 @@
                                             <div class="text-area">
                                                 <h6>Envato Pty Ltd</h6>
                                                 <p>16 Jan 2022</p>
-                                                <h3>717.14 USD</h3>
+                                                <h3>717.14 INR</h3>
                                                 <p class="com">Completed</p>
                                             </div>
                                         </div>
@@ -758,15 +753,15 @@
                                                 <ul class="payment-details">
                                                     <li>
                                                         <span>Payment Amount</span>
-                                                        <span>718.64 USD</span>
+                                                        <span>718.64 INR</span>
                                                     </li>
                                                     <li>
                                                         <span>Fee</span>
-                                                        <span>1.50 USD</span>
+                                                        <span>1.50 INR</span>
                                                     </li>
                                                     <li>
                                                         <span>Total Amount</span>
-                                                        <span>717.14 USD</span>
+                                                        <span>717.14 INR</span>
                                                     </li>
                                                 </ul>
                                                 <ul class="payment-info">

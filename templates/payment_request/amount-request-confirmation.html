@@ -10,7 +10,7 @@
                     <div class="head-area d-flex align-items-center justify-content-between">
                         <h4>Make a Payment</h4>
                         <div class="icon-area">
-                            <img src="{% static 'assets/images/icon/support-icon.png' %}" alt="icon">
+                            <img src="{% static 'assets/images/icon/support.png' %}" alt="icon">
                         </div>
                     </div>
                     <div class="choose-recipient">
@@ -35,7 +35,7 @@
                                 <div class="right">
                                     
                                     <a href="{% url 'core:search-account' %}">
-                                        <i class="icon-h-edit"></i>
+                                        <i class="fas fa-edit"></i>
                                         Edit
                                     </a>
                                 </div>
@@ -47,7 +47,7 @@
                             <h6>Payment Details</h6>
                             <div class="right">
                                 <a href="javascript:void(0)">
-                                    <i class="icon-h-edit"></i>
+                                    <i class="fas fa-edit"></i>
                                     Edit
                                 </a>
                             </div>
@@ -57,7 +57,7 @@
                                 <ul class="details-list">
                                     <li>
                                         <span>You Requested</span>
-                                        <b>{{transaction.amount}} USD</b>
+                                        <b>{{transaction.amount}} INR</b>
                                     </li>
                                    
                                     <li>
@@ -87,7 +87,7 @@
                         </div>
                         <div class="footer-area mt-40">
                             <a href="pay-step-2.html">Previous Step</a>
-                            <a href="javascript:void(0)" class="transferMod active" data-bs-toggle="modal" data-bs-target="#transferMod">Pay</a>
+                            <a href="javascript:void(0)" class="transferMod" data-bs-toggle="modal" data-bs-target="#transferMod" id="payButton" style="opacity: 0.5; pointer-events: none;">Pay</a>
                         </div>
                     </form>
                 </div>
@@ -120,8 +120,8 @@
                                     <div class="modal-content">
                                         <div class="modal-header mb-60 justify-content-between">
                                             <a href="javascript:void(0)">
-                                                <i class="icon-a-left-arrow"></i>
-                                                Back
+                                                <!-- <i class="icon-a-left-arrow"></i>
+                                                Back -->
                                             </a>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
                                         </div>
@@ -158,4 +158,28 @@
         </div>
     </div>
     <!-- Transfer Popup start -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const confirmCheckbox = document.getElementById('confirm');
+            const payButton = document.getElementById('payButton');
+            
+            function updatePayButton() {
+                if (confirmCheckbox.checked) {
+                    payButton.style.opacity = '1';
+                    payButton.style.pointerEvents = 'auto';
+                    payButton.classList.add('active');
+                } else {
+                    payButton.style.opacity = '0.5';
+                    payButton.style.pointerEvents = 'none';
+                    payButton.classList.remove('active');
+                }
+            }
+            
+            confirmCheckbox.addEventListener('change', updatePayButton);
+            
+            // Initialize button state
+            updatePayButton();
+        });
+    </script>
 {% endblock content %}
