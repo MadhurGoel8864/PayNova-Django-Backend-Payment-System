@@ -29,6 +29,9 @@
                                         <li class="nav-item" role="presentation">
                                             <button class="nav-link" id="reciever-request-tab" data-bs-toggle="tab" data-bs-target="#reciever-request" type="button" role="tab" aria-controls="upcoming" aria-selected="false">Received Requests</button>
                                         </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="deposits-tab" data-bs-toggle="tab" data-bs-target="#deposits" type="button" role="tab" aria-controls="deposits" aria-selected="false">Deposits</button>
+                                        </li>
                                     </ul>
                                     <div class="view-all d-flex align-items-center">
                                         <a href="javascript:void(0)">View All</a>
@@ -75,7 +78,7 @@
                                                                 {% endif %}
                                                             </td>
                                                             <td>
-                                                                <p>-${{s.amount|intcomma}}</p>
+                                                                <p>-₹{{s.amount|intcomma}}</p>
                                                             </td>
                                                             <td>
                                                                 <a href="{% url 'core:transaction-detail' s.transaction_id %}" class=""><i class="fas fa-eye"></i></a>
@@ -127,7 +130,7 @@
                                                                 {% endif %}
                                                             </td>
                                                             <td>
-                                                                <p>+${{s.amount|intcomma}}</p>
+                                                                <p>+₹{{s.amount|intcomma}}</p>
                                                             </td>
                                                             <td>
                                                                 <a href="{% url 'core:transaction-detail' s.transaction_id %}" class=""><i class="fas fa-eye"></i></a>
@@ -187,7 +190,7 @@
                                                                 {% endif %}
                                                             </td>
                                                             <td>
-                                                                <p>+${{s.amount|intcomma}}</p>
+                                                                <p>+₹{{s.amount|intcomma}}</p>
                                                             </td>
                                                             <td>
                                                                 {% if s.status == "request_sent" %}
@@ -260,7 +263,7 @@
                                                                 {% endif %}
                                                             </td>
                                                             <td>
-                                                                <p>+${{s.amount|intcomma}}</p>
+                                                                <p>+₹{{s.amount|intcomma}}</p>
                                                             </td>
                                                             <td>
                                                                 
@@ -279,6 +282,59 @@
                                                     <li>No Received Requests</li>
                                                     {% endfor %}
                                                     
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="deposits" role="tabpanel" aria-labelledby="deposits-tab">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Date</th>
+                                                        <th scope="col">Amount</th>
+                                                        <th scope="col">Description</th>
+                                                        <th scope="col">Status</th>
+                                                        <th scope="col">Transaction ID</th>
+                                                        <th scope="col">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for deposit in deposits %}
+                                                        <tr>
+                                                            <td>
+                                                                <p><small>{{deposit.date|date:"h:i"}}</small></p>
+                                                                <p class="mdr">{{deposit.date|date:"d M, Y"}}</p>
+                                                            </td>
+                                                            <td>
+                                                                <p>+₹{{deposit.amount|intcomma}}</p>
+                                                            </td>
+                                                            <td>
+                                                                <p>{{deposit.description}}</p>
+                                                            </td>
+                                                            <td>
+                                                                {% if deposit.status == 'completed' %}
+                                                                    <p class="text-success">{{deposit.status|title}}</p>
+                                                                {% endif %}
+                                                                {% if deposit.status == 'pending' %}
+                                                                    <p class="inprogress">{{deposit.status|title}}</p>
+                                                                {% endif %}
+                                                                {% if deposit.status == 'failed' %}
+                                                                    <p class="danger">{{deposit.status|title}}</p>
+                                                                {% endif %}
+                                                            </td>
+                                                            <td>
+                                                                <p class="mdr">{{deposit.transaction_id}}</p>
+                                                            </td>
+                                                            <td>
+                                                                <a href="{% url 'core:transaction-detail' deposit.transaction_id %}" class=""><i class="fas fa-eye"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    {% empty %}
+                                                        <tr>
+                                                            <td colspan="6" class="text-center">No deposits found</td>
+                                                        </tr>
+                                                    {% endfor %}
                                                 </tbody>
                                             </table>
                                         </div>

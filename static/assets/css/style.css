@@ -694,14 +694,14 @@ label {
     margin-right: 15px;
 }
 
-.header-section .navbar .navbar-collapse .navbar-nav .nav-item .nav-link.dropdown-toggle::after {
+/* content: "\0043"; */
+/* .header-section .navbar .navbar-collapse .navbar-nav .nav-item .nav-link.dropdown-toggle::after {
     position: absolute;
-    content: "\0043";
     border: none;
     font-family: "arafat font";
     font-weight: 400;
-    font-size: 0px;
-}
+    font-size: 200px;
+} */
 
 .header-section .navbar .navbar-collapse .navbar-nav .nav-item .dropdown-menu {
     background-color: var(--body-color);

@@ -19,35 +19,25 @@
                                 <div class="top-area">
                                     <div class="left-side">
                                         <h5>Hi, {{kyc.full_name|title}}!</h5>
-                                        <h2>${{account.account_balance|intcomma}}</h2>
+                                        <h2>₹{{account.account_balance|intcomma}}</h2>
                                         
                                         {% for recent_recieved_transfer in recent_recieved_transfer %}
-                                        <h5 class="receive">Last Received <span>${{recent_recieved_transfer.amount|intcomma}}</span></h5>
+                                        <h5 class="receive">Last Received <span>₹{{recent_recieved_transfer.amount|intcomma}}</span></h5>
                                             
                                         {% endfor %}
                                             
                                     </div>
                                     <div class="right-side">
                                         <div class="right-top">
-                                            <select>
-                                                <option value="1">US Dollar</option>
-                                                <option value="2">US Dollar</option>
-                                                <option value="3">US Dollar</option>
+                                            <select >
+                                                <option value="1" data-flag="in">INR</option>
                                             </select>
-                                            <div class="dropdown-area">
-                                                <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <img src="{% static 'assets1/images/icon/option.png' %}" alt="icon">
-                                                </button>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item" href="#">Fiat Currency</a></li>
-                                                    <li><a class="dropdown-item" href="#">crypto Currency</a></li>
-                                                </ul>
-                                            </div>
+
                                         </div>
                                         <div class="right-bottom">
                                             
                                             {% for recent_transfer in recent_transfer %}
-                                                <h4><small>${{recent_transfer.amount|intcomma}}</small></h4>
+                                                <h4><small>₹{{recent_transfer.amount|intcomma}}</small></h4>
                                             {% endfor %}
                                             <h5><small>Recent Transfer</small></h5>
                                         </div>
@@ -58,18 +48,9 @@
                                     <div class="left-side">
                                         <a href="{% url 'core:search-account' %}" class="cmn-btn">Transfer Money</a>
                                         <a href="{% url 'core:request-search-account' %}" class="cmn-btn">Receive Money</a>
-                                        <a href="withdraw-money-step-1.html" class="cmn-btn">All Cards</a>
+                                        <a href="{% url 'core:deposit-money' %}" class="cmn-btn">Deposit Money</a>
                                     </div>
-                                    <div class="right-side">
-                                        <div class="dropdown-area">
-                                            <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <img src="{% static 'assets1/images/icon/option.png' %}" alt="icon">
-                                            </button>
-                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                
-                                            </ul>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                             <div class="transactions-area">
@@ -90,6 +71,9 @@
                                         </li>
                                         <li class="nav-item" role="presentation">
                                             <button class="nav-link" id="reciever-request-tab" data-bs-toggle="tab" data-bs-target="#reciever-request" type="button" role="tab" aria-controls="upcoming" aria-selected="false">Received Requests</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="deposits-tab" data-bs-toggle="tab" data-bs-target="#deposits" type="button" role="tab" aria-controls="deposits" aria-selected="false">Deposits</button>
                                         </li>
                                     </ul>
                                     <div class="view-all d-flex align-items-center">
@@ -137,7 +121,7 @@
                                                                 {% endif %}
                                                             </td>
                                                             <td>
-                                                                <p>-${{s.amount|intcomma}}</p>
+                                                                <p>-₹{{s.amount|intcomma}}</p>
                                                             </td>
                                                             <td>
                                                                 <a href="{% url 'core:transaction-detail' s.transaction_id %}" class=""><i class="fas fa-eye"></i></a>
@@ -189,7 +173,7 @@
                                                                 {% endif %}
                                                             </td>
                                                             <td>
-                                                                <p>+${{s.amount|intcomma}}</p>
+                                                                <p>+₹{{s.amount|intcomma}}</p>
                                                             </td>
                                                             <td>
                                                                 <a href="{% url 'core:transaction-detail' s.transaction_id %}" class=""><i class="fas fa-eye"></i></a>
@@ -249,7 +233,7 @@
                                                                 {% endif %}
                                                             </td>
                                                             <td>
-                                                                <p>+${{s.amount|intcomma}}</p>
+                                                                <p>+₹{{s.amount|intcomma}}</p>
                                                             </td>
                                                             <td>
                                                                 {% if s.status == "request_sent" %}
@@ -322,7 +306,7 @@
                                                                 {% endif %}
                                                             </td>
                                                             <td>
-                                                                <p>+${{s.amount|intcomma}}</p>
+                                                                <p>+₹{{s.amount|intcomma}}</p>
                                                             </td>
                                                             <td>
                                                                 
@@ -341,6 +325,55 @@
                                                     <li>No Received Requests</li>
                                                     {% endfor %}
                                                     
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="deposits" role="tabpanel" aria-labelledby="deposits-tab">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">Date</th>
+                                                        <th scope="col">Amount</th>
+                                                        <th scope="col">Description</th>
+                                                        <th scope="col">Status</th>
+                                                        <th scope="col">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for deposit in deposits %}
+                                                        <tr>
+                                                            <td>
+                                                                <p><small>{{deposit.date|date:"h:i"}}</small></p>
+                                                                <p class="mdr">{{deposit.date|date:"d M, Y"}}</p>
+                                                            </td>
+                                                            <td>
+                                                                <p>+₹{{deposit.amount|intcomma}}</p>
+                                                            </td>
+                                                            <td>
+                                                                <p>{{deposit.description}}</p>
+                                                            </td>
+                                                            <td>
+                                                                {% if deposit.status == 'completed' %}
+                                                                    <p class="text-success">{{deposit.status|title}}</p>
+                                                                {% endif %}
+                                                                {% if deposit.status == 'pending' %}
+                                                                    <p class="inprogress">{{deposit.status|title}}</p>
+                                                                {% endif %}
+                                                                {% if deposit.status == 'failed' %}
+                                                                    <p class="danger">{{deposit.status|title}}</p>
+                                                                {% endif %}
+                                                            </td>
+                                                            <td>
+                                                                <a href="{% url 'core:transaction-detail' deposit.transaction_id %}" class=""><i class="fas fa-eye"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    {% empty %}
+                                                        <tr>
+                                                            <td colspan="5" class="text-center">No deposits found</td>
+                                                        </tr>
+                                                    {% endfor %}
                                                 </tbody>
                                             </table>
                                         </div>
@@ -384,7 +417,7 @@
                                                     </div>
                                                     <div class="bottom_card">
                                                         <div class="card_info">
-                                                        <div class="card_holder_name">${{c.amount|intcomma}}</div>
+                                                        <div class="card_holder_name">₹{{c.amount|intcomma}}</div>
                                                         <div class="card_holder_name">{{c.name}}</div>
                                                         </div>
                                                         <div class="card_info">
@@ -458,22 +491,22 @@
                                                 <div class="text-area">
                                                     
                                                     {% if n.notification_type == "Credit Alert" %}
-                                                    <p class="mdr">You received a payment of <b>${{n.amount}}</b></p>
+                                                    <p class="mdr">You received a payment of <b>₹{{n.amount}}</b></p>
                                                     {% endif %}
                                                     {% if n.notification_type == "Debit Alert" %}
-                                                    <p class="mdr">You sent a payment of <b>${{n.amount}}</b></p>
+                                                    <p class="mdr">You sent a payment of <b>₹{{n.amount}}</b></p>
                                                     {% endif %}
                                                     {% if n.notification_type == "Sent Payment Request" %}
-                                                    <p class="mdr">You sent a <b>payment request</b> of <b>${{n.amount}}</b></p>
+                                                    <p class="mdr">You sent a <b>payment request</b> of <b>₹{{n.amount}}</b></p>
                                                     {% endif %}
                                                     {% if n.notification_type == "Recieved Payment Request" %}
-                                                    <p class="mdr">You received a <b>payment request</b> of <b>${{n.amount}}</b></p>
+                                                    <p class="mdr">You received a <b>payment request</b> of <b>₹{{n.amount}}</b></p>
                                                     {% endif %}
                                                     {% if n.notification_type == "Funded Credit Card" %}
-                                                    <p class="mdr">You funded your credit card with <b>${{n.amount}}</b></p>
+                                                    <p class="mdr">You funded your credit card with <b>₹{{n.amount}}</b></p>
                                                     {% endif %}
                                                     {% if n.notification_type == "Withdrew Credit Card Funds" %}
-                                                    <p class="mdr">You withdrew <b>${{n.amount}}</b> from your credit card</p>
+                                                    <p class="mdr">You withdrew <b>₹{{n.amount}}</b> from your credit card</p>
                                                     {% endif %}
                                                     {% if n.notification_type == "Deleted Credit Card" %}
                                                     <p class="mdr">You deleted your credit card</p>
@@ -549,7 +582,7 @@
                                                             <span>17 Oct, 2020</span>
                                                         </p>
                                                         <p class="right">
-                                                            <span>$160.48</span>
+                                                            <span>₹160.48</span>
                                                             <span>Withdraw</span>
                                                         </p>
                                                     </li>
@@ -559,7 +592,7 @@
                                                             <span>15 Oct, 2021</span>
                                                         </p>
                                                         <p class="right">
-                                                            <span>$106.58</span>
+                                                            <span>₹106.58</span>
                                                             <span>Withdraw</span>
                                                         </p>
                                                     </li>
@@ -569,7 +602,7 @@
                                                             <span>12 Oct, 2020</span>
                                                         </p>
                                                         <p class="right">
-                                                            <span>$176.58</span>
+                                                            <span>₹176.58</span>
                                                             <span>Withdraw</span>
                                                         </p>
                                                     </li>
@@ -579,7 +612,7 @@
                                                             <span>25 Oct, 2020</span>
                                                         </p>
                                                         <p class="right">
-                                                            <span>$167.85</span>
+                                                            <span>₹167.85</span>
                                                             <span>Withdraw</span>
                                                         </p>
                                                     </li>

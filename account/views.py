@@ -74,7 +74,7 @@ def dashboard(request):
 
         request_sender_transaction = Transaction.objects.filter(sender=request.user, transaction_type="request")
         request_reciever_transaction = Transaction.objects.filter(reciever=request.user, transaction_type="request")
-        
+        deposits = Transaction.objects.filter(user=request.user, transaction_type="deposit").order_by("-id")
         
         account = Account.objects.get(user=request.user)
         credit_card = CreditCard.objects.filter(user=request.user).order_by("-id")
@@ -108,11 +108,11 @@ def dashboard(request):
         "credit_card":credit_card,
         "sender_transaction":sender_transaction,
         "reciever_transaction":reciever_transaction,
-
-        'request_sender_transaction':request_sender_transaction,
-        'request_reciever_transaction':request_reciever_transaction,
-        'recent_transfer':recent_transfer,
-        'recent_recieved_transfer':recent_recieved_transfer,
+        "request_sender_transaction":request_sender_transaction,
+        "request_reciever_transaction":request_reciever_transaction,
+        "recent_transfer":recent_transfer,
+        "recent_recieved_transfer":recent_recieved_transfer,
+        "deposits":deposits,
     }
     return render(request, "account/dashboard.html", context)
     

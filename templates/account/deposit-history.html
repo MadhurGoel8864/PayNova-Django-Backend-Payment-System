@@ -1,0 +1,74 @@
+{% extends "partials/dashboard-base.html" %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+    <!-- Dashboard Section start -->
+    <section class="dashboard-section body-collapse">
+        <div class="overlay pt-120">
+            <div class="container-fruid">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="section-content">
+                            <div class="transactions-area">
+                                <div class="">
+                                    <h5>Deposit History</h5>
+                                    <p>View all your deposits</p>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Date</th>
+                                                <th scope="col">Amount</th>
+                                                <th scope="col">Description</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Transaction ID</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for deposit in deposits %}
+                                                <tr>
+                                                    <td>
+                                                        <p><small>{{deposit.date|date:"h:i"}}</small></p>
+                                                        <p class="mdr">{{deposit.date|date:"d M, Y"}}</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>+₹{{deposit.amount|intcomma}}</p>
+                                                    </td>
+                                                    <td>
+                                                        <p>{{deposit.description}}</p>
+                                                    </td>
+                                                    <td>
+                                                        {% if deposit.status == 'completed' %}
+                                                            <p class="text-success">{{deposit.status|title}}</p>
+                                                        {% endif %}
+                                                        {% if deposit.status == 'pending' %}
+                                                            <p class="inprogress">{{deposit.status|title}}</p>
+                                                        {% endif %}
+                                                        {% if deposit.status == 'failed' %}
+                                                            <p class="danger">{{deposit.status|title}}</p>
+                                                        {% endif %}
+                                                    </td>
+                                                    <td>
+                                                        <p class="mdr">{{deposit.transaction_id}}</p>
+                                                    </td>
+                                                </tr>
+                                            {% empty %}
+                                                <tr>
+                                                    <td colspan="5" class="text-center">No deposits found</td>
+                                                </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Dashboard Section end -->
+
+{% endblock content %} 

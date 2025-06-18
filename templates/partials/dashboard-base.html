@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="{% static 'assets1/css/plugin/apexcharts.css' %}">
     <link rel="stylesheet" href="{% static 'assets1/css/plugin/nice-select.css' %}">
     <link rel="stylesheet" href="{% static 'assets1/css/arafat-font.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
     <link rel="stylesheet" href="{% static 'assets1/css/plugin/animate.css' %}">
     <link rel="stylesheet" href="{% static 'assets1/css/style.css' %}">
 </head>
@@ -38,26 +40,10 @@
                         <div class="sidebar-icon">
                             <img src="{% static 'assets1/images/icon/menu.png' %}" alt="icon">
                         </div>
-                        <form method="POST" class="flex-fill">
-                            
-                            <div class="form-group d-flex align-items-center">
-                                <img src="{% static 'assets1/images/icon/search.png' %}" alt="icon">
-                                <input type="text" placeholder="Type to search...">
-                            </div>
-                        </form>
+
                         <div class="dashboard-nav">
                             <div class="single-item language-area">
-                                <div class="language-btn">
-                                    <img src="{% static 'assets1/images/icon/lang.png' %}" alt="icon">
-                                </div>
-                                <ul class="main-area language-content">
-                                    <li>English</li>
-                                    <li>Hindi</li>
-                                    <li class="active">English (US)</li>
-                                    <li>Japanese</li>
-                                    <li>Kannada</li>
-                                    <li>Lithuanian</li>
-                                </ul>
+
                             </div>
                             <div class="single-item notifications-area">
                                 <div class="notifications-btn">
@@ -76,22 +62,22 @@
                                                 <div class="text-area">
                                                     
                                                     {% if n.notification_type == "Credit Alert" %}
-                                                    <p class="mdr">You received a payment of <b>${{n.amount}}</b></p>
+                                                    <p class="mdr">You received a payment of <b>₹{{n.amount}}</b></p>
                                                     {% endif %}
                                                     {% if n.notification_type == "Debit Alert" %}
-                                                    <p class="mdr">You sent a payment of <b>${{n.amount}}</b></p>
+                                                    <p class="mdr">You sent a payment of <b>₹{{n.amount}}</b></p>
                                                     {% endif %}
                                                     {% if n.notification_type == "Sent Payment Request" %}
-                                                    <p class="mdr">You sent a <b>payment request</b> of <b>${{n.amount}}</b></p>
+                                                    <p class="mdr">You sent a <b>payment request</b> of <b>₹{{n.amount}}</b></p>
                                                     {% endif %}
                                                     {% if n.notification_type == "Recieved Payment Request" %}
-                                                    <p class="mdr">You received a <b>payment request</b> of <b>${{n.amount}}</b></p>
+                                                    <p class="mdr">You received a <b>payment request</b> of <b>₹{{n.amount}}</b></p>
                                                     {% endif %}
                                                     {% if n.notification_type == "Funded Credit Card" %}
-                                                    <p class="mdr">You funded your credit card with <b>${{n.amount}}</b></p>
+                                                    <p class="mdr">You funded your credit card with <b>₹{{n.amount}}</b></p>
                                                     {% endif %}
                                                     {% if n.notification_type == "Withdrew Credit Card Funds" %}
-                                                    <p class="mdr">You withdrew <b>${{n.amount}}</b> from your credit card</p>
+                                                    <p class="mdr">You withdrew <b>₹{{n.amount}}</b> from your credit card</p>
                                                     {% endif %}
                                                     {% if n.notification_type == "Deleted Credit Card" %}
                                                     <p class="mdr">You deleted your credit card</p>
@@ -106,47 +92,6 @@
                                             <i class="fa-solid fa-caret-right"></i>
                                         </li>
                                         {% endfor %}
-
-                                        <!-- <li>
-                                            <a href="javascript:void(0)" class="d-flex">
-                                                <div class="img-area">
-                                                    <img src="{% static 'assets1/images/user-2.png' %}" class="max-un" alt="image">
-                                                </div>
-                                                <div class="text-area">
-                                                    <p class="mdr"><b>James Deed</b> requested a payment of
-                                                        <b>£890.00</b>
-                                                    </p>
-                                                    <p class="mdr time-area">08.09AM</p>
-                                                </div>
-                                            </a>
-                                            <i class="fa-solid fa-caret-right"></i>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)" class="d-flex">
-                                                <div class="img-area">
-                                                    <img src="{% static 'assets1/images/master-card.png' %}" class="max-un" alt="image">
-                                                </div>
-                                                <div class="text-area">
-                                                    <p class="mdr">Your new payment method has beed added successfully
-                                                    </p>
-                                                    <p class="mdr time-area">09.39AM</p>
-                                                </div>
-                                            </a>
-                                            <i class="fa-solid fa-caret-right"></i>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)" class="d-flex">
-                                                <div class="img-area">
-                                                    <img src="{% static 'assets1/images/user-3.png' %}" class="max-un" alt="image">
-                                                </div>
-                                                <div class="text-area">
-                                                    <p class="mdr">You received a payment of <b>$250.00</b> from Goerge
-                                                        Michael</p>
-                                                    <p class="mdr time-area">Yesterday</p>
-                                                </div>
-                                            </a>
-                                            <i class="fa-solid fa-caret-right"></i>
-                                        </li> -->
                                     </ul>
                                 </div>
                             </div>
@@ -189,9 +134,7 @@
                                         <li class="border-area">
                                             <a href="{% url 'account:dashboard' %}"><i class="fas fa-user"></i>Dashboard</a>
                                         </li>
-                                        <li class="border-area">
-                                            <a href="javascript:void(0)"><i class="fas fa-cog"></i>Settings</a>
-                                        </li>
+
                                         <li>
                                             <a href="{% url 'userauths:sign-out' %}"><i class="fas fa-sign-out"></i>Logout</a>
                                         </li>
@@ -229,27 +172,27 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="money-exchange.html">
-                                    <img src="{% static 'assets1/images/icon/exchange.png' %}" alt="Exchange"> <span>Exchange</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="recipients.html">
-                                    <img src="{% static 'assets1/images/icon/recipients.png' %}" alt="Recipients"> <span>Recipients</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="crypto.html">
-                                    <img src="{% static 'assets1/images/icon/crypto.png' %}" alt="Crypto"> <span>Crypto</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="deposit-money.html">
+                                <a href="{% url 'core:deposit-money' %}">
                                     <img src="{% static 'assets1/images/icon/deposit.png' %}" alt="Deposit"> <span>Deposit Money</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="withdraw-money-step-1.html">
+                                <a href="{% url 'core:under-construction' %}">
+                                    <img src="{% static 'assets1/images/icon/exchange.png' %}" alt="Exchange"> <span>Exchange</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'core:under-construction' %}">
+                                    <img src="{% static 'assets1/images/icon/recipients.png' %}" alt="Recipients"> <span>Recipients</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'core:under-construction' %}">
+                                    <img src="{% static 'assets1/images/icon/crypto.png' %}" alt="Crypto"> <span>Crypto</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{% url 'core:under-construction' %}">
                                     <img src="{% static 'assets1/images/icon/withdraw.png' %}" alt="Withdraw"> <span>Withdraw Money</span>
                                 </a>
                             </li>
@@ -271,15 +214,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="pt-120">
-                            <div class="invite-now">
-                                <div class="img-area">
-                                    <img src="{% static 'assets1/images/invite-now-illus.png' %}" alt="Image">
-                                </div>
-                                <p>Invite your friend and get $25</p>
-                                <a href="javascript:void(0)" class="cmn-btn">Invite Now</a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
