@@ -1048,8 +1048,8 @@ label {
     content: "";
     width: 30px;
     height: 30px;
+    background-image: url(../images/icon/indian-flag.jpg);
     left: -40px;
-    background-image: url(../images/icon/flag-usa.png);
     background-repeat: no-repeat;
 }
 
@@ -1745,8 +1745,9 @@ label {
     content: "";
     width: 30px;
     height: 30px;
+    background-image: url(../images/icon/indian-flag.jpg);
+
     left: -40px;
-    background-image: url(../images/icon/flag-usa.png);
     background-repeat: no-repeat;
 }
 
@@ -1794,7 +1795,9 @@ label {
 }
 
 .dashboard-section.pay.step-2 .main-content .exchange-content .recipient .nice-select .current::before {
-    background-image: url(../images/icon/flag-bd.png);
+    background-image: url(../images/icon/indian-flag.jpg);
+
+
 }
 
 .dashboard-section.pay.step-2 .main-content .pay-option {
@@ -2432,7 +2435,7 @@ label {
     width: 30px;
     height: 30px;
     left: -40px;
-    background-image: url(../images/icon/flag-usa.png);
+    background-image: url(../images/icon/indian-flag.jpg);
     background-repeat: no-repeat;
 }
 
@@ -2472,7 +2475,11 @@ label {
 }
 
 .dashboard-section.crypto .exchange-content .recipient .nice-select .current::before {
-    background-image: url(../images/icon/flag-btc.png);
+    /* background-image: url(../images/icon/flag-btc.png); */
+    background-image: url(../images/icon/indian-flag.jpg);
+
+
+
 }
 
 .dashboard-section.crypto .exchange-content .pay-details ul {
@@ -2770,7 +2777,8 @@ label {
     width: 30px;
     height: 30px;
     left: -40px;
-    background-image: url(../images/icon/flag-usa.png);
+    background-image: url(../images/icon/indian-flag.jpg);
+
     background-repeat: no-repeat;
 }
 
@@ -3354,7 +3362,8 @@ label {
     width: 30px;
     height: 30px;
     left: -40px;
-    background-image: url(../images/icon/flag-usa.png);
+    background-image: url(../images/icon/indian-flag.jpg);
+
     background-repeat: no-repeat;
 }
 
@@ -5174,4 +5183,20 @@ label {
             font-weight: 700;
             padding-top: 10%;
             
+        }
+
+        .currency-select {
+            /* background: url('../images/flag/in.jpg') no-repeat 10px center;
+             */
+            background-image: url(../images/icon/indian-flag.jpg);
+            
+             background-size: 20px;
+            padding-left: 35px !important;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .currency-select option {
+            padding: 10px;
         }

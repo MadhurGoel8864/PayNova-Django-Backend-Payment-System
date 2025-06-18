@@ -11,6 +11,7 @@ def transaction_lists(request):
 
     request_sender_transaction = Transaction.objects.filter(sender=request.user, transaction_type="request")
     request_reciever_transaction = Transaction.objects.filter(reciever=request.user, transaction_type="request")
+    deposits = Transaction.objects.filter(user=request.user, transaction_type="deposit").order_by("-id")
 
     context = {
         "sender_transaction":sender_transaction,
@@ -18,6 +19,7 @@ def transaction_lists(request):
 
         'request_sender_transaction':request_sender_transaction,
         'request_reciever_transaction':request_reciever_transaction,
+        'deposits':deposits,
     }
 
     return render(request, "transaction/transaction-list.html", context)
