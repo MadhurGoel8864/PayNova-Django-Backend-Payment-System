@@ -1,0 +1,2 @@
+[nix]
+packages = ["gcc", "postgresql_16", "python39"]
