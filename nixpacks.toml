@@ -1,17 +1,16 @@
 [variables]
 NIXPACKS_PYTHON_VERSION = "3.10"
-PYTHON_PACKAGES = "pip setuptools wheel"
 
 [phases.setup]
 nixPkgs = [
+  "python310",
+  "pip",
   "gcc",
   "postgresql_16"
 ]
 
 [phases.install]
-cmds = [
-  "python3 -m pip install --no-cache-dir -r requirements.txt"
-]
+cmds = ["pip install --no-cache-dir -r requirements.txt"]
 
 [start]
-cmd = "python3 manage.py migrate && gunicorn myproject.wsgi:application"
+cmd = "python manage.py migrate && gunicorn payment_prj.wsgi:application"
