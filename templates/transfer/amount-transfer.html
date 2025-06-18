@@ -49,9 +49,9 @@
                             <div class="input-area">
                                 <input class="xxlr" onkeyup="CalculateBalance()" placeholder="{{request.user.account.account_balance|intcomma}}" type="number" name="amount-send" id="amount-send">
                                 <select>
-                                    <option value="1">USD</option>
-                                    <option value="2">USD</option>
-                                    <option value="3">USD</option>
+                                    <option value="1">INR</option>
+                                    <option value="2">INR</option>
+                                    <option value="3">INR</option>
                                 </select>
                             </div>
                             <p>Available Balance<b>₹{{request.user.account.account_balance|intcomma}}</b></p>
@@ -102,7 +102,7 @@
                         </ul>
                         <ul class="total-fees pay">
                             <li><h5>Total To Pay</h5></li>
-                            <li><h5 id="total-to-pay">USD 0.00</h5></li>
+                            <li><h5 id="total-to-pay">INR 0.00</h5></li>
                         </ul>
                         <div class="footer-area mt-40">
                             <a href="pay-step-1.html">Previous Step</a>

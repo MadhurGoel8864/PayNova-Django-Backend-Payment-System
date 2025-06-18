@@ -1047,7 +1047,9 @@ label {
     position: absolute;
     content: "";
     width: 30px;
-    height: 30px;
+        background-size: cover; /* or 'contain' */
+    background-position: center; /* Center the image */
+    height: 20px;
     background-image: url(../images/icon/indian-flag.jpg);
     left: -40px;
     background-repeat: no-repeat;

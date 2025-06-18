@@ -42,14 +42,14 @@ $(function($) {
         }
 
         // Sticky Header
-        var fixed_top = $(".header-section");
-        $(window).on("scroll", function() {
-            if ($(window).scrollTop() > 50) {
-                fixed_top.addClass("animated fadeInDown header-fixed");
-            } else {
-                fixed_top.removeClass("animated fadeInDown header-fixed");
-            }
-        });
+        // var fixed_top = $(".header-section");
+        // $(window).on("scroll", function() {
+        //     if ($(window).scrollTop() > 50) {
+        //         fixed_top.addClass("animated fadeInDown header-fixed");
+        //     } else {
+        //         fixed_top.removeClass("animated fadeInDown header-fixed");
+        //     }
+        // });
 
         // language active
         var language = $(".language-content li");
