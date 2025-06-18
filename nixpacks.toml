@@ -3,7 +3,6 @@ nixPkgs = [
   "gcc",
   "python39",
   "postgresql_16",
-  "libpq"
 ]
 
 [phases.install]
