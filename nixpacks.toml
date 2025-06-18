@@ -6,7 +6,7 @@ nixPkgs = [
 ]
 
 [phases.install]
-cmds = ["pip install -r requirements.txt"]
+cmds = ["python3 -m pip install -r requirements.txt"]
 
 [start]
-cmd = "python manage.py migrate && gunicorn myproject.wsgi:application"
+cmd = "python3 manage.py migrate && gunicorn myproject.wsgi:application"
