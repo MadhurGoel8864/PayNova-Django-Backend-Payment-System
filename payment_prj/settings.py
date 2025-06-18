@@ -170,10 +170,10 @@ AUTH_USER_MODEL = 'userauths.User'
 
 JAZZMIN_SETTINGS = {
     # "site_title": "MovieX",
-    "site_header": "Paylio",
+    "site_header": "Paynova",
     "site_brand": "Payment Made Easy...",
     # "site_logo": "images/logo.jpg",
-    "copyright": "Paylio - All RIght Reserverd © Copyright 2023",
+    "copyright": "Paynova - All RIght Reserverd © Copyright 2023",
     # "order_with_respect_to": ["core", 'userauths', "transactions" , 'addon', 'blog']
 
     

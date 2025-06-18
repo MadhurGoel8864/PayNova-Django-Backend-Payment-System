@@ -16,12 +16,25 @@
                     <div class="col-xl-5">
                         <div class="section-text text-center">
                             <h5 class="sub-title">Account</h5>
-                            <h2 class="title">Welcome to Paylio</h2>
+                            <h2 class="title">Welcome to Paynova</h2>
                             <p class="dont-acc">Already have an account? <a href="{% url 'userauths:sign-in' %}">Login</a></p>
                             
+
                         </div>
                         <form method="POST">
                             {% csrf_token %}
+                            {% if form.errors %}
+                            <div class="alert-danger alert">
+                                <!-- More robust error viewer -->
+                            
+                                {% for field in form %}
+                                {% for error in field.errors %}
+                                <p> {{ error }} </p>
+                                {% endfor %}
+                                {% endfor %}
+
+                            </div>
+                            {% endif %}
 
                             <div class="row">
                                 <div class="col-12">
