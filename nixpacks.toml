@@ -1,8 +1,11 @@
+[variables]
+NIXPACKS_PYTHON_VERSION = "3.9"
+PYTHON_PACKAGES = "pip setuptools wheel"
+
 [phases.setup]
 nixPkgs = [
   "gcc",
-  "python39Full",            # Includes pip and python3 binary
-  "postgresql_16"
+  "postgresql_16",
 ]
 
 [phases.install]
