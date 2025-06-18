@@ -1,18 +1,15 @@
 [variables]
-NIXPACKS_PYTHON_VERSION = "3.9"
+NIXPACKS_PYTHON_VERSION = "3.10"
 PYTHON_PACKAGES = "pip setuptools wheel"
 
 [phases.setup]
 nixPkgs = [
   "gcc",
-  "postgresql_16",
+  "postgresql_16"
 ]
 
 [phases.install]
 cmds = [
-  "echo Python path: $(which python3)",
-  "python3 --version",
-  "python3 -m pip --version",
   "python3 -m pip install --no-cache-dir -r requirements.txt"
 ]
 
