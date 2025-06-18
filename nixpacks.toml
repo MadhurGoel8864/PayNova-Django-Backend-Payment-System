@@ -1,2 +1,13 @@
-[nix]
-packages = ["gcc", "postgresql_16", "python39"]
+[phases.setup]
+nixPkgs = [
+  "gcc",
+  "python39",
+  "postgresql_16",
+  "libpq"
+]
+
+[phases.install]
+cmds = ["pip install -r requirements.txt"]
+
+[start]
+cmd = "python manage.py migrate && gunicorn myproject.wsgi:application"
