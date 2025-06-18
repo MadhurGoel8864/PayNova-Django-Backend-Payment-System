@@ -1,16 +1,14 @@
 [phases.setup]
 nixPkgs = [
+  # This brings in python with pip and setuptools
+  "python39Packages.pip",
+  "python39Packages.setuptools",
   "gcc",
-  "python39Full",
-  "postgresql_16",
+  "postgresql_16"
 ]
 
 [phases.install]
-cmds = [
-  "which python3",
-  "python3 -m ensurepip",      # Optional if using python39Full
-  "python3 -m pip install -r requirements.txt"
-]
+cmds = ["python3 -m pip install --upgrade pip", "pip install -r requirements.txt"]
 
 [start]
 cmd = "python3 manage.py migrate && gunicorn myproject.wsgi:application"
