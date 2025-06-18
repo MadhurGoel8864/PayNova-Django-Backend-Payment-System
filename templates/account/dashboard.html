@@ -390,7 +390,7 @@
                                     <div class="right-side">
                                         <div class="dropdown-area">
                                             <button type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <img src="{% static 'assets1/images/icon/option.png' %}" alt="icon">
+                                                <!-- <img src="{% static 'assets1/images/icon/option.png' %}" alt="icon"> -->
                                             </button>
                                             
                                         </div>
@@ -478,10 +478,7 @@
                             <div class="single-item">
                                 <div class="section-text d-flex align-items-center justify-content-between">
                                     <h6>Notification ({{notifications.count}})</h6>
-                                    <div class="view-all d-flex align-items-center">
-                                        <a href="javascript:void(0)">View All</a>
-                                        <img src="{% static 'assets1/images/icon/right-arrow.png' %}" alt="icon">
-                                    </div>
+
                                 </div>
                                 <ul class="recipients-item">
                                     {% for n in notifications %}
@@ -630,8 +627,6 @@
                                                         <input class="xxlr" placeholder="400.00" type="number">
                                                         <select>
                                                             <option value="1">INR</option>
-                                                            <option value="2">INR</option>
-                                                            <option value="3">INR</option>
                                                         </select>
                                                     </div>
                                                     <div class="bottom-area d-flex align-items-center justify-content-between">

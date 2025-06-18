@@ -1051,6 +1051,8 @@ label {
     background-position: center; /* Center the image */
     height: 20px;
     background-image: url(../images/icon/indian-flag.jpg);
+    background-size: cover; 
+    background-position: center;
     left: -40px;
     background-repeat: no-repeat;
 }
@@ -1643,12 +1645,12 @@ label {
     color: var(--bs-white);
 }
 
-.dashboard-section.pay.step .main-content .user-select .right a:hover::before {
+/* .dashboard-section.pay.step .main-content .user-select .right a:hover::before {
     position: absolute;
     content: "\0047";
     font-family: 'arafat font';
     left: 35px;
-}
+} */
 
 .dashboard-section.pay.step .main-content form {
     margin-top: 40px;
@@ -1746,9 +1748,12 @@ label {
     position: absolute;
     content: "";
     width: 30px;
-    height: 30px;
+    height: 20px;
     background-image: url(../images/icon/indian-flag.jpg);
-
+    background-size: cover; 
+    background-position: center;
+    background-size: cover; 
+    background-position: center;
     left: -40px;
     background-repeat: no-repeat;
 }
@@ -1798,6 +1803,8 @@ label {
 
 .dashboard-section.pay.step-2 .main-content .exchange-content .recipient .nice-select .current::before {
     background-image: url(../images/icon/indian-flag.jpg);
+    background-size: cover; 
+    background-position: center;
 
 
 }
@@ -2438,6 +2445,8 @@ label {
     height: 30px;
     left: -40px;
     background-image: url(../images/icon/indian-flag.jpg);
+    background-size: cover; 
+    background-position: center;
     background-repeat: no-repeat;
 }
 
@@ -2479,6 +2488,8 @@ label {
 .dashboard-section.crypto .exchange-content .recipient .nice-select .current::before {
     /* background-image: url(../images/icon/flag-btc.png); */
     background-image: url(../images/icon/indian-flag.jpg);
+    background-size: cover; 
+    background-position: center;
 
 
 
@@ -2780,6 +2791,8 @@ label {
     height: 30px;
     left: -40px;
     background-image: url(../images/icon/indian-flag.jpg);
+    background-size: cover; 
+    background-position: center;
 
     background-repeat: no-repeat;
 }
@@ -3364,6 +3377,8 @@ label {
     height: 30px;
     left: -40px;
     background-image: url(../images/icon/indian-flag.jpg);
+    background-size: cover; 
+    background-position: center;
 
     background-repeat: no-repeat;
 }
@@ -5190,6 +5205,8 @@ label {
             /* background: url('../images/flag/in.jpg') no-repeat 10px center;
              */
             background-image: url(../images/icon/indian-flag.jpg);
+    background-size: cover; 
+    background-position: center;
             
              background-size: 20px;
             padding-left: 35px !important;

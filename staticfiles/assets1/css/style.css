@@ -1050,6 +1050,8 @@ label {
     height: 30px;
     left: -40px;
     background-image: url(../images/icon/indian-flag.jpg);
+    background-size: cover; 
+    background-position: center;
     background-repeat: no-repeat;
 }
 
@@ -1747,6 +1749,8 @@ label {
     height: 30px;
     left: -40px;
     background-image: url(../images/icon/indian-flag.jpg);
+    background-size: cover; 
+    background-position: center;
     background-repeat: no-repeat;
 }
 
@@ -2433,6 +2437,8 @@ label {
     height: 30px;
     left: -40px;
     background-image: url(../images/icon/indian-flag.jpg);
+    background-size: cover; 
+    background-position: center;
     background-repeat: no-repeat;
 }
 
@@ -2771,6 +2777,8 @@ label {
     height: 30px;
     left: -40px;
     background-image: url(../images/icon/indian-flag.jpg);
+    background-size: cover; 
+    background-position: center;
     background-repeat: no-repeat;
 }
 
@@ -3355,6 +3363,8 @@ label {
     height: 30px;
     left: -40px;
     background-image: url(../images/icon/indian-flag.jpg);
+    background-size: cover; 
+    background-position: center;
     background-repeat: no-repeat;
 }
 
