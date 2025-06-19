@@ -97,12 +97,12 @@ WSGI_APPLICATION = 'payment_prj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': "django.db.backends.postgresql",
         'NAME': "railway",
         'USER': "postgres",
-        'PASSWORD': "8mQ7HNiw02WgdBdzNydx",
-        'HOST': "containers-us-west-177.railway.app",
-        'PORT': 5620,
+        'PASSWORD': "pGKgKgKQTpqdjsvRLFkIyEtwpZimUljD",
+        'HOST': "turntable.proxy.rlwy.net",
+        'PORT': "45928",
     }
 }
 
@@ -181,29 +181,29 @@ JAZZMIN_SETTINGS = {
 
 
 
-# AWS_ACCESS_KEY_ID = "AKIAZK5IZZVYNHEWXOMW"
+AWS_ACCESS_KEY_ID = "AKIARZ5BMQD7QDU5WWI6"
 
-# AWS_SECRET_ACCESS_KEY = "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"
+AWS_SECRET_ACCESS_KEY = "foPlTnF2d3/3uLBHXsjbrxTplVQONErhVMrHajM8"
 
-# AWS_STORAGE_BUCKET_NAME = "payment-desphixs"
+AWS_STORAGE_BUCKET_NAME = "paynova-madhur"
 
-# AWS_S3_FILE_OVERWRITE = False
+AWS_S3_FILE_OVERWRITE = False
 
-# AWS_DEFAULT_ACL = None
+AWS_DEFAULT_ACL = None
 
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-# AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 
-# AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
-# AWS_LOCATION = 'static'
+AWS_LOCATION = 'static'
 
-# STATIC_LOCATION = 'static'
+STATIC_LOCATION = 'static'
 
-# STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
 
 
 JAZZMIN_UI_TWEAKS = {
