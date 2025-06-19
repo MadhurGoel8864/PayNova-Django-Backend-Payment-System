@@ -67,7 +67,6 @@
 - **Static Files:** AWS S3  
 
 ---
-https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/2bb5c4150a22e6ec5e742901b0a8909b86cb7f12/paynova_screenshots/transaction_details.png
 ## 🛠️ Installation & Setup
 
 ### Prerequisites
@@ -156,7 +155,7 @@ Specify your license here, e.g., MIT, GPL-3.0, etc.
 ## 📬 Contact
 
 **Madhur Goel**  
-📧 [madhurgoel1234@gmail.com](mailto:madhurgoel1234@gmail.com)  
+📧 [madhur12a16072@gmail.com](mailto:madhur12a16072@gmail.com)  
 🌐 [Portfolio](https://portfolio-madhur-bay.vercel.app)  
 🔗 [LinkedIn](https://www.linkedin.com/in/madhur-goel-mg)  
 🐙 [GitHub](https://github.com/MadhurGoel8864)
