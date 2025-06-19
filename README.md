@@ -134,7 +134,6 @@ To deploy your own version:
 
 We welcome contributions! Follow these steps:
 
-    ```bash
 ### 1. Fork the repository
 ### 2. Create a new branch
     git checkout -b feature/your-feature-name
