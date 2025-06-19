@@ -1,6 +1,6 @@
 # PayNova
 
-![PayNova Logo]([https://drive.google.com/file/d/10CEHukqyfkR0dB9osdk2AwZbNKHSB65U/view?usp=sharing](https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/f81a85ef26a2e4ec3419e4ed3ae548cbaaf0f3e1/paynova_screenshots/logo.png))
+![PayNova Logo](https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/f81a85ef26a2e4ec3419e4ed3ae548cbaaf0f3e1/paynova_screenshots/logo.png))
 
 **PayNova** is a modern and secure online money transfer platform built with Django. It provides users with a seamless experience to manage their finances—adding credit cards, making payments, requesting funds, and tracking transaction history. With an interactive UI and robust security, PayNova aims to be your go-to solution for all payment needs.
 
@@ -13,8 +13,8 @@
 ---
 
 ## ScreenShots
-![Home Page]([https://drive.google.com/file/d/10CEHukqyfkR0dB9osdk2AwZbNKHSB65U/view?usp=sharing](https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/f81a85ef26a2e4ec3419e4ed3ae548cbaaf0f3e1/paynova_screenshots/main_home_page.png
-))
+![Home Page](https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/f81a85ef26a2e4ec3419e4ed3ae548cbaaf0f3e1/paynova_screenshots/main_home_page.png
+)
 
 
 ## 🌟 Features
