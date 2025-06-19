@@ -13,7 +13,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from dotenv import load_dotenv
 
+load_dotenv() 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -95,16 +97,29 @@ WSGI_APPLICATION = 'payment_prj.wsgi.application'
 #     }
 # }
 
+
 DATABASES = {
     'default': {
-        'ENGINE': "django.db.backends.postgresql",
-        'NAME': "railway",
-        'USER': "postgres",
-        'PASSWORD': "pGKgKgKQTpqdjsvRLFkIyEtwpZimUljD",
-        'HOST': "turntable.proxy.rlwy.net",
-        'PORT': "45928",
+        'ENGINE': os.getenv("ENGINE"),
+        'NAME': os.getenv("NAME"),
+        'USER': os.getenv("USER"),
+        'PASSWORD': os.getenv("DB_NAME"),
+        'HOST': os.getenv("HOST"),
+        'PORT': os.getenv("PORT"),
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': "django.db.backends.postgresql",
+#         'NAME': "railway",
+#         'USER': "postgres",
+#         'PASSWORD': "pGKgKgKQTpqdjsvRLFkIyEtwpZimUljD",
+#         'HOST': "turntable.proxy.rlwy.net",
+#         'PORT': "45928",
+#     }
+# }
 
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
@@ -181,19 +196,13 @@ JAZZMIN_SETTINGS = {
 
 
 
-AWS_ACCESS_KEY_ID = "AKIARZ5BMQD7QDU5WWI6"
-
-AWS_SECRET_ACCESS_KEY = "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"
-
-AWS_STORAGE_BUCKET_NAME = "paynova-madhur"
-
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME")
 AWS_S3_FILE_OVERWRITE = False
-
 AWS_DEFAULT_ACL = None
-
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = os.getenv("DEFAULT_FILE_STORAGE")
+STATICFILES_STORAGE = os.getenv("STATICFILES_STORAGE")
 
 AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
 
