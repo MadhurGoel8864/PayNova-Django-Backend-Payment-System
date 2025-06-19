@@ -1,6 +1,6 @@
 # PayNova
 
-![PayNova Logo](https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/f81a85ef26a2e4ec3419e4ed3ae548cbaaf0f3e1/paynova_screenshots/logo.png))
+![PayNova Logo](https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/f81a85ef26a2e4ec3419e4ed3ae548cbaaf0f3e1/paynova_screenshots/logo.png)
 
 **PayNova** is a modern and secure online money transfer platform built with Django. It provides users with a seamless experience to manage their finances—adding credit cards, making payments, requesting funds, and tracking transaction history. With an interactive UI and robust security, PayNova aims to be your go-to solution for all payment needs.
 
@@ -15,6 +15,29 @@
 ## ScreenShots
 ![Home Page](https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/f81a85ef26a2e4ec3419e4ed3ae548cbaaf0f3e1/paynova_screenshots/main_home_page.png
 )
+
+![Features Page](https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/2bb5c4150a22e6ec5e742901b0a8909b86cb7f12/paynova_screenshots/features.png)
+
+![Sign-up Page](https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/2bb5c4150a22e6ec5e742901b0a8909b86cb7f12/paynova_screenshots/sign_up.png)
+
+![KYC Page1](https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/2bb5c4150a22e6ec5e742901b0a8909b86cb7f12/paynova_screenshots/accounts_page.png)
+
+![KYC Page2](https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/2bb5c4150a22e6ec5e742901b0a8909b86cb7f12/paynova_screenshots/kyc_2.png)
+
+![Dashboard Top](https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/2bb5c4150a22e6ec5e742901b0a8909b86cb7f12/paynova_screenshots/dahboard_top.png)
+
+![Notifications](https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/2bb5c4150a22e6ec5e742901b0a8909b86cb7f12/paynova_screenshots/notifications.png)
+
+![Credit Card Details](https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/2bb5c4150a22e6ec5e742901b0a8909b86cb7f12/paynova_screenshots/credit_card_details.png)
+
+![Account Search Page](https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/2bb5c4150a22e6ec5e742901b0a8909b86cb7f12/paynova_screenshots/account_search.png)
+
+![Amount transfer Step 2](https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/2bb5c4150a22e6ec5e742901b0a8909b86cb7f12/paynova_screenshots/amount_transfer_setp_2.png)
+
+![Payment Success Page](https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/2bb5c4150a22e6ec5e742901b0a8909b86cb7f12/paynova_screenshots/payment_success.png)
+
+![Transaction Details Page](https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/2bb5c4150a22e6ec5e742901b0a8909b86cb7f12/paynova_screenshots/transaction_details.png)
+
 
 
 ## 🌟 Features
@@ -44,7 +67,7 @@
 - **Static Files:** AWS S3  
 
 ---
-
+https://github.com/MadhurGoel8864/PayNova-Django-Backend-Payment-System/blob/2bb5c4150a22e6ec5e742901b0a8909b86cb7f12/paynova_screenshots/transaction_details.png
 ## 🛠️ Installation & Setup
 
 ### Prerequisites
