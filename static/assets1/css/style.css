@@ -4958,7 +4958,9 @@ label {
         height: 100%;
         outline: none;
         border: none;
-        background: linear-gradient(258.61deg, #9501ff 5.03%, #00956d 99.03%);
+        background: linear-gradient(258.61deg, #fc0505 5.03%, #dfff12 99.03%);
+
+        /* background: linear-gradient(258.61deg, #9501ff 5.03%, #00956d 99.03%); */
         box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
         border-radius: 10px;
         backface-visibility: hidden;
@@ -5036,7 +5038,7 @@ label {
         padding: 10px;
         }
 
-        .middle_card .chip {
+        /* .middle_card .chip {
         display: block;
         background-color: #281830;
         width: 60px;
@@ -5044,7 +5046,7 @@ label {
         height: 30px;
         border-radius: 10px;
         box-shadow: inset 0px 0px 20px #505050;
-        }
+        } */
 
         .middle_card .card_number {
         position: absolute;
