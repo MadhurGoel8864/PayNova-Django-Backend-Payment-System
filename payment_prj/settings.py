@@ -110,17 +110,6 @@ DATABASES = {
 }
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': "django.db.backends.postgresql",
-#         'NAME': "railway",
-#         'USER': "postgres",
-#         'PASSWORD': "pGKgKgKQTpqdjsvRLFkIyEtwpZimUljD",
-#         'HOST': "turntable.proxy.rlwy.net",
-#         'PORT': "45928",
-#     }
-# }
-
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 
